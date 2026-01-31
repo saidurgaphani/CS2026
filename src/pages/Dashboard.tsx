@@ -104,7 +104,8 @@ const Dashboard = () => {
             }
         } catch (err: any) {
             console.error("Fetch Error:", err);
-            setErrorMsg("Could not connect to analysis archives.");
+            const detail = err.response?.data?.detail || "Archive link failed.";
+            setErrorMsg(`Archive link failed: ${detail}`);
         }
     };
 

@@ -52,7 +52,12 @@ async def lifespan(app: FastAPI):
     # Startup: Initialize DB and verify connection
     logger.info(f"Connecting to MongoDB at {MONGO_URI.split('@')[-1] if '@' in MONGO_URI else 'localhost'}...")
     try:
-        app.mongodb_client = AsyncIOMotorClient(MONGO_URI, serverSelectionTimeoutMS=5000)
+        app.mongodb_client = AsyncIOMotorClient(
+            MONGO_URI, 
+            serverSelectionTimeoutMS=5000,
+            tls=True,
+            tlsAllowInvalidCertificates=True
+        )
         app.db = app.mongodb_client[DATABASE_NAME]
         # Ping the database
         await app.mongodb_client.admin.command('ping')
@@ -233,6 +238,8 @@ async def process_upload(
 @app.get("/reports")
 async def get_user_reports(user_id: str = Header(...)):
     """Fetch user-scoped archives from database."""
+    if not hasattr(app, 'db') or app.db is None:
+        raise HTTPException(status_code=503, detail="Database connection not initialized")
     try:
         cursor = app.db.reports.find({"user_id": user_id}).sort("created_at", -1)
         reports = []
@@ -242,7 +249,7 @@ async def get_user_reports(user_id: str = Header(...)):
         return reports
     except Exception as e:
         logger.error(f"Reports Fetch Error: {e}")
-        return []
+        raise HTTPException(status_code=500, detail=f"Database query failed: {str(e)}")
 
 if __name__ == "__main__":
     import uvicorn
