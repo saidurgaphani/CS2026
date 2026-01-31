@@ -49,51 +49,25 @@ class ReportResponse(BaseModel):
 # --- Database & Lifespan ---
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    logger.info(f"🔗 Database setup starting... [Target: {DATABASE_NAME}]")
+    # Startup: Simple and robust connection
     try:
-        # Extra resilient Atlas config
         app.mongodb_client = AsyncIOMotorClient(
             MONGO_URI,
             serverSelectionTimeoutMS=20000,
-            connectTimeoutMS=20000,
-            socketTimeoutMS=20000,
-            retryWrites=True,
             tls=True,
             tlsAllowInvalidCertificates=True
         )
         app.db = app.mongodb_client[DATABASE_NAME]
-        
-        # Proper async verification to avoid "coroutine expected" error
-        async def ping_db():
-            try:
-                await app.mongodb_client.admin.command('ping')
-                logger.info("✅ MongoDB Connection Verified")
-            except Exception as e:
-                logger.error(f"❌ MongoDB Ping Failed: {e}")
-
-        asyncio.create_task(ping_db())
-        logger.info("✅ Database client initialized")
+        # Verify immediately
+        await app.mongodb_client.admin.command('ping')
+        logger.info("✅ Database connected successfully")
     except Exception as e:
-        logger.error(f"❌ DB Init Failed: {e}")
+        logger.error(f"❌ Database connection failed: {e}")
     
     yield
-    # Shutdown
     app.mongodb_client.close()
-    logger.info("MongoDB Connection Closed")
 
-app = FastAPI(title="InsightAI Architect", version="2.5", lifespan=lifespan)
-
-# --- Middleware ---
-@app.middleware("http")
-async def log_requests(request, call_next):
-    logger.info(f"Incoming: {request.method} {request.url.path}")
-    try:
-        response = await call_next(request)
-        logger.info(f"Outgoing: {request.method} {request.url.path} - Status: {response.status_code}")
-        return response
-    except Exception as e:
-        logger.error(f"Request Failed: {request.method} {request.url.path} - Error: {e}")
-        raise
+app = FastAPI(title="Insightra API", version="3.0", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
