@@ -1,0 +1,2 @@
+Backend: cd server && pip3 install -r requirements.txt && python3 main.py
+Frontend: The existing npm run dev will now show the new InsightAI Dashboard after you login!
