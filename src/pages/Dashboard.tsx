@@ -104,7 +104,7 @@ const Dashboard = () => {
             }
         } catch (err: any) {
             console.error("Fetch Error:", err);
-            const detail = err.response?.data?.detail || "Archive link failed.";
+            const detail = err.response?.data?.detail || err.message || "Network Error";
             setErrorMsg(`Archive link failed: ${detail}`);
         }
     };

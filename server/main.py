@@ -59,12 +59,14 @@ async def lifespan(app: FastAPI):
             tlsAllowInvalidCertificates=True
         )
         app.db = app.mongodb_client[DATABASE_NAME]
-        # Ping the database
-        await app.mongodb_client.admin.command('ping')
-        logger.info("✅ MongoDB Connection Verified")
+        # Ping the database - using a separate task to avoid blocking lifespan startup if it hangs
+        try:
+            await asyncio.wait_for(app.mongodb_client.admin.command('ping'), timeout=5.0)
+            logger.info("✅ MongoDB Connection Verified")
+        except Exception as ping_err:
+            logger.warning(f"⚠️ MongoDB Ping Failed (Startup will continue): {ping_err}")
     except Exception as e:
-        logger.error(f"❌ MongoDB Connection Failed: {str(e)}")
-        logger.warning("Server will run, but database operations may fail.")
+        logger.error(f"❌ MongoDB Client Initialization Failed: {str(e)}")
     
     yield
     # Shutdown
