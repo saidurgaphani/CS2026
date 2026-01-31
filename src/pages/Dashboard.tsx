@@ -96,7 +96,7 @@ const Dashboard = () => {
             setErrorMsg(null);
             const res = await axios.get(`${API_BASE}/reports`, {
                 headers: { 'user-id': user.uid },
-                timeout: 10000
+                timeout: 60000
             });
             setReports(res.data);
             if (res.data.length > 0 && !selectedReport) {

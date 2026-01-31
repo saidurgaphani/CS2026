@@ -50,21 +50,28 @@ class ReportResponse(BaseModel):
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Startup: Initialize DB and verify connection
-    logger.info(f"Connecting to MongoDB at {MONGO_URI.split('@')[-1] if '@' in MONGO_URI else 'localhost'}...")
+    logger.info(f"🔗 Connecting to MongoDB Atlas [DB: {DATABASE_NAME}]...")
     try:
+        # For Atlas, simple initialization is usually best. 
+        # tlsAllowInvalidCertificates is used only as a last resort for strict envs.
         app.mongodb_client = AsyncIOMotorClient(
             MONGO_URI, 
-            serverSelectionTimeoutMS=5000,
+            serverSelectionTimeoutMS=10000,
             tls=True,
             tlsAllowInvalidCertificates=True
         )
         app.db = app.mongodb_client[DATABASE_NAME]
-        # Ping the database - using a separate task to avoid blocking lifespan startup if it hangs
-        try:
-            await asyncio.wait_for(app.mongodb_client.admin.command('ping'), timeout=5.0)
-            logger.info("✅ MongoDB Connection Verified")
-        except Exception as ping_err:
-            logger.warning(f"⚠️ MongoDB Ping Failed (Startup will continue): {ping_err}")
+        
+        # Verify connection asynchronously
+        async def verify_conn():
+            try:
+                await app.mongodb_client.admin.command('ping')
+                logger.info("✅ MongoDB Connection Fully Verified")
+            except Exception as e:
+                logger.error(f"❌ MongoDB Ping Failed: {e}")
+
+        asyncio.create_task(verify_conn())
+        
     except Exception as e:
         logger.error(f"❌ MongoDB Client Initialization Failed: {str(e)}")
     
@@ -240,17 +247,21 @@ async def process_upload(
 @app.get("/reports")
 async def get_user_reports(user_id: str = Header(...)):
     """Fetch user-scoped archives from database."""
+    logger.info(f"🔍 Fetching reports for user: {user_id}")
     if not hasattr(app, 'db') or app.db is None:
+        logger.error("❌ Database connection not initialized")
         raise HTTPException(status_code=503, detail="Database connection not initialized")
     try:
+        logger.info(f"📂 Querying collection: {app.db.reports.name}")
         cursor = app.db.reports.find({"user_id": user_id}).sort("created_at", -1)
         reports = []
         async for doc in cursor:
             doc.pop('_id', None)
             reports.append(doc)
+        logger.info(f"✅ Found {len(reports)} reports for user {user_id}")
         return reports
     except Exception as e:
-        logger.error(f"Reports Fetch Error: {e}")
+        logger.error(f"🔥 Reports Fetch Error: {e}")
         raise HTTPException(status_code=500, detail=f"Database query failed: {str(e)}")
 
 if __name__ == "__main__":
