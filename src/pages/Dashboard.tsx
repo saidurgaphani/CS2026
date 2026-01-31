@@ -171,10 +171,18 @@ const Dashboard = () => {
                 setIsUploading(false);
                 setActiveTab('dashboard');
             } catch (err: any) {
-                console.error("Upload Error:", err);
+                console.error("Upload Error Details:", err);
                 setIsUploading(false);
                 setIsGenerating(false);
-                setErrorMsg("Generation failed. Check your API session.");
+
+                const detail = err.response?.data?.detail || err.message;
+                if (err.code === 'ECONNABORTED') {
+                    setErrorMsg("Analysis timed out. The AI engine is still warming up.");
+                } else if (!err.response) {
+                    setErrorMsg(`Network error: Could not reach ${API_BASE}. Check your connection.`);
+                } else {
+                    setErrorMsg(`Generation failed: ${detail}`);
+                }
             }
         }
     };
