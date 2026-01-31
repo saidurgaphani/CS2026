@@ -63,8 +63,15 @@ async def lifespan(app: FastAPI):
         )
         app.db = app.mongodb_client[DATABASE_NAME]
         
-        # Don't let a slow DB block the entire API from starting
-        asyncio.create_task(app.mongodb_client.admin.command('ping'))
+        # Proper async verification to avoid "coroutine expected" error
+        async def ping_db():
+            try:
+                await app.mongodb_client.admin.command('ping')
+                logger.info("✅ MongoDB Connection Verified")
+            except Exception as e:
+                logger.error(f"❌ MongoDB Ping Failed: {e}")
+
+        asyncio.create_task(ping_db())
         logger.info("✅ Database client initialized")
     except Exception as e:
         logger.error(f"❌ DB Init Failed: {e}")
