@@ -49,31 +49,25 @@ class ReportResponse(BaseModel):
 # --- Database & Lifespan ---
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup: Initialize DB and verify connection
-    logger.info(f"🔗 Connecting to MongoDB Atlas [DB: {DATABASE_NAME}]...")
+    logger.info(f"🔗 Database setup starting... [Target: {DATABASE_NAME}]")
     try:
-        # For Atlas, simple initialization is usually best. 
-        # tlsAllowInvalidCertificates is used only as a last resort for strict envs.
+        # Extra resilient Atlas config
         app.mongodb_client = AsyncIOMotorClient(
-            MONGO_URI, 
-            serverSelectionTimeoutMS=10000,
+            MONGO_URI,
+            serverSelectionTimeoutMS=20000,
+            connectTimeoutMS=20000,
+            socketTimeoutMS=20000,
+            retryWrites=True,
             tls=True,
             tlsAllowInvalidCertificates=True
         )
         app.db = app.mongodb_client[DATABASE_NAME]
         
-        # Verify connection asynchronously
-        async def verify_conn():
-            try:
-                await app.mongodb_client.admin.command('ping')
-                logger.info("✅ MongoDB Connection Fully Verified")
-            except Exception as e:
-                logger.error(f"❌ MongoDB Ping Failed: {e}")
-
-        asyncio.create_task(verify_conn())
-        
+        # Don't let a slow DB block the entire API from starting
+        asyncio.create_task(app.mongodb_client.admin.command('ping'))
+        logger.info("✅ Database client initialized")
     except Exception as e:
-        logger.error(f"❌ MongoDB Client Initialization Failed: {str(e)}")
+        logger.error(f"❌ DB Init Failed: {e}")
     
     yield
     # Shutdown
@@ -81,6 +75,18 @@ async def lifespan(app: FastAPI):
     logger.info("MongoDB Connection Closed")
 
 app = FastAPI(title="InsightAI Architect", version="2.5", lifespan=lifespan)
+
+# --- Middleware ---
+@app.middleware("http")
+async def log_requests(request, call_next):
+    logger.info(f"Incoming: {request.method} {request.url.path}")
+    try:
+        response = await call_next(request)
+        logger.info(f"Outgoing: {request.method} {request.url.path} - Status: {response.status_code}")
+        return response
+    except Exception as e:
+        logger.error(f"Request Failed: {request.method} {request.url.path} - Error: {e}")
+        raise
 
 app.add_middleware(
     CORSMiddleware,
