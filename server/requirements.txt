@@ -5,3 +5,8 @@ python-multipart
 pydantic
 google-generativeai
 python-dotenv
+pymongo
+motor
+scikit-learn
+openpyxl
+dnspython

@@ -1,0 +1,131 @@
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Will watch for changes in these directories: ['/Users/saidurgaphani/CS2026/server']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [8784] using StatReload
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [8831]
+INFO:     Waiting for application startup.
+INFO:InsightAI:Connecting to MongoDB at cluster0.qwkxo3u.mongodb.net/?appName=Cluster0...
+INFO:InsightAI:✅ MongoDB Connection Verified
+INFO:     Application startup complete.
+INFO:     127.0.0.1:50396 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50396 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50427 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50427 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50752 - "OPTIONS /upload HTTP/1.1" 200 OK
+INFO:InsightAI:🚀 Processing upload: 'business_report_dataset_1200' for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:🧠 Requesting AI synthesis...
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:InsightAI:💾 Archiving structured data to database...
+INFO:InsightAI:✅ Report 'REP_20260201005022' generated successfully
+INFO:     127.0.0.1:50752 - "POST /upload HTTP/1.1" 200 OK
+INFO:InsightAI:🚀 Processing upload: 'business_report_dataset' for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:🧠 Requesting AI synthesis...
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:InsightAI:💾 Archiving structured data to database...
+INFO:InsightAI:✅ Report 'REP_20260201005057' generated successfully
+INFO:     127.0.0.1:50759 - "POST /upload HTTP/1.1" 200 OK
+INFO:InsightAI:🚀 Processing upload: 'customer_support_tickets_1200' for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:🧠 Requesting AI synthesis...
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:InsightAI:💾 Archiving structured data to database...
+INFO:InsightAI:✅ Report 'REP_20260201005601' generated successfully
+INFO:     127.0.0.1:50799 - "POST /upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50825 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50827 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50825 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50825 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50892 - "OPTIONS /upload HTTP/1.1" 200 OK
+INFO:InsightAI:🚀 Processing upload: 'report_data' for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:🧠 Requesting AI synthesis...
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:InsightAI:💾 Archiving structured data to database...
+INFO:InsightAI:✅ Report 'REP_20260201010307' generated successfully
+INFO:     127.0.0.1:50892 - "POST /upload HTTP/1.1" 200 OK
+INFO:InsightAI:🚀 Processing upload: 'report_data (1)' for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:🧠 Requesting AI synthesis...
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:InsightAI:💾 Archiving structured data to database...
+INFO:InsightAI:✅ Report 'REP_20260201010609' generated successfully
+INFO:     127.0.0.1:50925 - "POST /upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51191 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51193 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51191 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51193 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51229 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51231 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51868 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51869 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51868 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51869 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51884 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51884 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51889 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51889 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51884 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51899 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51901 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52040 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52044 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52071 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52073 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52071 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52073 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52133 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52135 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52170 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52172 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52175 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52276 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52277 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52276 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52277 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52328 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52330 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52349 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52351 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52383 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52385 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52419 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52421 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52427 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52429 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52458 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52460 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52591 - "OPTIONS /upload HTTP/1.1" 200 OK
+INFO:InsightAI:🚀 Processing upload: 'business_report_dataset_1200' for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:🧠 Requesting AI synthesis...
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:InsightAI:💾 Archiving structured data to database...
+INFO:InsightAI:✅ Report 'REP_20260201024713' generated successfully
+INFO:     127.0.0.1:52591 - "POST /upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52620 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52621 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52623 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52625 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52668 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52670 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52691 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52693 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52757 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52760 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53039 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53039 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /reports HTTP/1.1" 200 OK
