@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import {
     LayoutDashboard,
-    FileText,
     Settings,
     LogOut,
     Search,
@@ -9,7 +8,6 @@ import {
     TrendingUp,
     TrendingDown,
     ChevronLeft,
-    Filter,
     Download,
     Share2,
     Package,
@@ -18,17 +16,10 @@ import {
     Users,
     Briefcase,
     Layers,
-    Calendar,
-    MoreVertical,
-    Minus,
     CheckCircle2,
-    AlertCircle,
-    Clock,
     IndianRupee,
-    ShoppingBag,
     Star
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { auth } from '../lib/firebase';
 import {
     BarChart,
@@ -45,9 +36,6 @@ import {
     Cell,
     Legend
 } from 'recharts';
-import axios from 'axios';
-
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 /* --- Constants & Types --- */
 
@@ -336,7 +324,7 @@ const Dashboard = () => {
                                 <ResponsiveContainer width="100%" height="100%">
                                     <PieChart>
                                         <Pie data={deptPieData} innerRadius={60} outerRadius={80} paddingAngle={5} dataKey="value">
-                                            {deptPieData.map((entry, index) => (
+                                            {deptPieData.map((_, index) => (
                                                 <Cell key={`cell-${index}`} fill={Object.values(COLORS)[index]} />
                                             ))}
                                         </Pie>
@@ -462,7 +450,6 @@ const KPICard = ({ title, value, trend, icon, color, positive = true }: any) => 
     const isIndigo = color === 'indigo';
     const isEmerald = color === 'emerald';
     const isRose = color === 'rose';
-    const isAmber = color === 'amber';
 
     return (
         <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
