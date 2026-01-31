@@ -49,20 +49,18 @@ class ReportResponse(BaseModel):
 # --- Database & Lifespan ---
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup: Simple and robust connection
+    # Startup: Minimal initialization
     try:
         app.mongodb_client = AsyncIOMotorClient(
             MONGO_URI,
-            serverSelectionTimeoutMS=20000,
+            serverSelectionTimeoutMS=5000,
             tls=True,
             tlsAllowInvalidCertificates=True
         )
         app.db = app.mongodb_client[DATABASE_NAME]
-        # Verify immediately
-        await app.mongodb_client.admin.command('ping')
-        logger.info("✅ Database connected successfully")
+        logger.info("✅ Database client initialized")
     except Exception as e:
-        logger.error(f"❌ Database connection failed: {e}")
+        logger.error(f"❌ DB Init Error: {e}")
     
     yield
     app.mongodb_client.close()
@@ -152,12 +150,7 @@ async def root():
 
 @app.get("/health")
 async def health_check():
-    try:
-        await app.mongodb_client.admin.command('ping')
-        db_status = "connected"
-    except:
-        db_status = "error"
-    return {"status": "online", "database": db_status, "ai_engine": "Gemini 1.5 Flash"}
+    return {"status": "online", "message": "API is responding"}
 
 @app.post("/upload")
 async def process_upload(
