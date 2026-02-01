@@ -688,15 +688,31 @@ async def data_aware_chat(request: ChatRequest):
 
             full_query = f"{system_prompt}\n\nUSER QUERY: {user_query}"
             
-            # Use streaming generation
-            response = await model.generate_content_async(full_query, stream=True)
+            # Use streaming generation with Fallback
             accumulated_text = ""
-            
-            async for chunk in response:
-                if chunk.text:
-                    accumulated_text += chunk.text
-                    yield f"data: {json.dumps({'content': chunk.text, 'id': chat_id, 'title': chat_title})}\n\n"
-            
+            try:
+                response = await model.generate_content_async(full_query, stream=True)
+                
+                async for chunk in response:
+                    if chunk.text:
+                        accumulated_text += chunk.text
+                        yield f"data: {json.dumps({'content': chunk.text, 'id': chat_id, 'title': chat_title})}\n\n"
+            except Exception as e:
+                logger.error(f"AI Stream Failed (Quota/Net): {e}")
+                # Fallback to Mock if AI fails mid-stream or at start
+                mock_payload = get_mock_chat_response(user_query, data_context, str(e))
+                mock_text = mock_payload['content']
+                
+                # If we already sent some text, append a newline explanation
+                if accumulated_text:
+                    fallback_msg = "\n\n[System: Connection lost. Switching to offline backup...]\n" + mock_text
+                    yield f"data: {json.dumps({'content': fallback_msg, 'id': chat_id, 'title': chat_title})}\n\n"
+                    accumulated_text += fallback_msg
+                else:
+                    # If we haven't sent anything yet, just send the mock
+                    yield f"data: {json.dumps({'content': mock_text, 'id': chat_id, 'title': chat_title})}\n\n"
+                    accumulated_text = mock_text
+
             # Save completed interaction
             all_msgs = request.messages + [ChatMessage(role="assistant", content=accumulated_text)]
             await app.db.chats.update_one(
@@ -711,7 +727,7 @@ async def data_aware_chat(request: ChatRequest):
             )
             
         except Exception as e:
-            logger.error(f"Streaming Error: {e}")
+            logger.error(f"Critical Chat System Error: {e}")
             yield f"data: {json.dumps({'error': str(e)})}\n\n"
 
     return StreamingResponse(chat_generator(), media_type="text/event-stream")

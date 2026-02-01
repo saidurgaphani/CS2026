@@ -116,18 +116,26 @@ const DataChat = () => {
             const reader = response.body.getReader();
             const decoder = new TextDecoder();
             let accumulatedContent = '';
+            let buffer = '';
 
             while (true) {
                 const { done, value } = await reader.read();
                 if (done) break;
 
                 const chunk = decoder.decode(value, { stream: true });
-                const lines = chunk.split('\n');
+                buffer += chunk;
+                const lines = buffer.split('\n');
+
+                // Keep the last line in the buffer as it might be incomplete
+                buffer = lines.pop() || '';
 
                 for (const line of lines) {
-                    if (line.startsWith('data: ')) {
+                    if (line.trim().startsWith('data: ')) {
                         try {
-                            const data = JSON.parse(line.slice(6));
+                            const params = line.trim().slice(6);
+                            if (!params) continue;
+                            const data = JSON.parse(params);
+
                             if (data.error) throw new Error(data.error);
 
                             // Live update the current chat ID if it was newly created
@@ -143,7 +151,7 @@ const DataChat = () => {
                                 ));
                             }
                         } catch (e) {
-                            console.error('Error parsing stream chunk:', e);
+                            console.error('Error parsing stream chunk:', e, 'Line:', line);
                         }
                     }
                 }

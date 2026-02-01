@@ -106,7 +106,7 @@ const Textarea = React.forwardRef<
         <textarea
             className={cn(
                 // Adjusted text color, placeholder color, and border/ring colors to grayscale
-                'flex min-h-[80px] w-full rounded-md border border-gray-400 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-base ring-offset-white placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm text-black dark:text-slate-100',
+                'flex min-h-[80px] w-full rounded-md border border-gray-400 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-base ring-offset-white placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm text-black dark:text-white',
                 className,
             )}
             ref={ref}
@@ -409,7 +409,7 @@ function PureMultimodalInput({
                     onChange={handleInput}
                     className={cn(
                         'min-h-[56px] max-h-[200px] overflow-y-auto resize-none rounded-[2rem] !text-sm py-4 pl-14 pr-14',
-                        'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all focus:border-indigo-400 dark:focus:border-indigo-500 focus:shadow-indigo-100/20 dark:focus:shadow-none',
+                        'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all focus:border-indigo-400 dark:focus:border-indigo-500 focus:shadow-indigo-100/20 dark:focus:shadow-none text-black dark:text-white',
                         className,
                     )}
                     rows={1}
