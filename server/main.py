@@ -317,30 +317,46 @@ async def get_aggregate_analytics(
         resampled_json.index = resampled_json.index.strftime('%Y-%m-%d')
         chart_data = resampled_json.reset_index().rename(columns={'date_parsed': 'index'}).to_dict(orient='records')
 
-        # 8. KPI Calculations
-        total_rev = df[rev_col].sum() if rev_col and rev_col in df.columns else 0
-        total_exp = df[exp_col].sum() if exp_col and exp_col in df.columns else 0
-        total_prof = df[prof_col].sum() if prof_col and prof_col in df.columns else 0
-        
+        # 8. KPI Calculations (Context-Aware)
+        # We focus on the LATEST period of the chosen frequency
+        latest_rev = 0
+        latest_exp = 0
+        latest_prof = 0
+        prev_prof = 0
         prof_growth = 0
-        if prof_col and prof_col in resampled.columns and len(resampled) >= 2:
-            prev_val = resampled[prof_col].iloc[-2]
-            curr_val = resampled[prof_col].iloc[-1]
-            if prev_val != 0:
-                prof_growth = round(((curr_val - prev_val) / abs(prev_val) * 100), 2)
+        efficiency = 0
+        
+        if not resampled.empty:
+            latest_row = resampled.iloc[-1]
+            latest_rev = latest_row.get(rev_col, 0) if rev_col else 0
+            latest_exp = latest_row.get(exp_col, 0) if exp_col else 0
+            latest_prof = latest_row.get(prof_col, 0) if prof_col else 0
+            
+            # Growth vs Previous Period
+            if len(resampled) >= 2:
+                prev_prof = resampled[prof_col].iloc[-2] if prof_col else 0
+                if abs(prev_prof) > 0:
+                    prof_growth = round(((latest_prof - prev_prof) / abs(prev_prof) * 100), 2)
+            
+            # Efficiency Score (Profit Margin %)
+            if latest_rev > 0:
+                efficiency = round((latest_prof / latest_rev) * 100, 1)
+            else:
+                efficiency = 0
 
-        # 9. AI Insights
-        summary_str = f"Unified report: Frequency={frequency}, Total Revenue={total_rev}, Net Profit={total_prof}."
+        # 9. AI Insights & Projection
+        summary_str = f"Latest {frequency} Report: Revenue={latest_rev}, Profit={latest_prof}, Growth={prof_growth}%."
         preview_json = resampled.tail(10).to_json()
-        ai_insights = await generate_ai_report_async(summary_str, preview_json, {"title": f"Aggregated {frequency}", "domain": "Business"})
+        ai_insights = await generate_ai_report_async(summary_str, preview_json, {"title": f"Dynamic {frequency} Analysis", "domain": "Business"})
 
         return {
             "metrics": {
-                "total_revenue": total_rev,
-                "total_expenses": total_exp,
-                "total_profit": total_prof,
+                "total_revenue": latest_rev,
+                "total_expenses": latest_exp,
+                "total_profit": latest_prof,
                 "growth": prof_growth,
-                "avg_period_profit": round(resampled[prof_col].mean(), 2) if prof_col and prof_col in resampled.columns else 0
+                "efficiency": efficiency,
+                "projection": round(latest_prof * (1 + (prof_growth/100 if prof_growth > 0 else 0.05)), 2)
             },
             "chart_data": chart_data,
             "ai_synthesis": ai_insights,

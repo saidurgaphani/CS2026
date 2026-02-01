@@ -631,3 +631,42 @@ INFO:     Started server process [23460]
 INFO:     Waiting for application startup.
 INFO:InsightAI:✅ Database client initialized
 INFO:     Application startup complete.
+INFO:     127.0.0.1:55713 - "OPTIONS /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55715 - "OPTIONS /analytics/aggregate?frequency=Y HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:55713 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:55715 - "GET /analytics/aggregate?frequency=Y HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:55731 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55733 - "OPTIONS /analytics/aggregate?frequency=W HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:55733 - "GET /analytics/aggregate?frequency=W HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:55733 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:55733 - "GET /analytics/aggregate?frequency=Y HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:55738 - "GET /analytics/aggregate?frequency=W HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:55738 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:55740 - "GET /analytics/aggregate?frequency=W HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [23460]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [23711]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.

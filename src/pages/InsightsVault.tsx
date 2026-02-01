@@ -127,34 +127,34 @@ const InsightsVault = () => {
                 {/* KPI Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
                     <KPICard
-                        title="Aggregated Revenue"
+                        title={`Revenue (${freqLabels[frequency]})`}
                         value={formatCurrency(metrics.total_revenue || 0)}
                         icon={<TrendingUp className="w-5 h-5 text-emerald-500" />}
-                        trend="+12.5%"
-                        isPositive={true}
+                        trend={metrics.growth ? `${metrics.growth}%` : 'Stable'}
+                        isPositive={(metrics.growth || 0) >= 0}
                         delay={0.1}
                     />
                     <KPICard
-                        title="Operating Profit"
+                        title={`Profit (${freqLabels[frequency]})`}
                         value={formatCurrency(metrics.total_profit || 0)}
                         icon={<Activity className="w-5 h-5 text-indigo-500" />}
-                        trend={`${metrics.growth || 0}%`}
+                        trend={metrics.growth ? `${metrics.growth}%` : 'Stable'}
                         isPositive={(metrics.growth || 0) >= 0}
                         delay={0.2}
                     />
                     <KPICard
                         title="Efficiency Score"
-                        value="94.2%"
+                        value={`${metrics.efficiency || 0}%`}
                         icon={<Zap className="w-5 h-5 text-amber-500" />}
-                        trend="+2.1%"
+                        trend="Margin"
                         isPositive={true}
                         delay={0.3}
                     />
                     <KPICard
-                        title="Projection"
-                        value={formatCurrency((metrics.total_profit || 0) * 1.15)}
+                        title="AI Projection"
+                        value={formatCurrency(metrics.projection || 0)}
                         icon={<Target className="w-5 h-5 text-rose-500" />}
-                        trend="AI Forecast"
+                        trend={`Next ${frequency}`}
                         isPositive={true}
                         delay={0.4}
                     />
