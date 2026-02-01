@@ -241,78 +241,95 @@ async def get_aggregate_analytics(
         all_rows = []
         async for doc in cursor:
             data = doc.get("cleaned_data", [])
-            all_rows.extend(data)
+            # Add doc created_at as fallback date for each row in this report
+            created_at = doc.get("created_at")
+            for row in data:
+                if "sys_created_at" not in row:
+                    row["sys_created_at"] = created_at
+                all_rows.append(row)
         
         if not all_rows:
-            return {"message": "No data found", "metrics": {}, "charts": {}}
+            return {"message": "No data found", "metrics": {}, "chart_data": [], "ai_synthesis": {}}
 
         df = pd.DataFrame(all_rows)
 
         # 2. Identify Columns
         date_col = next((c for c in df.columns if any(k in c.lower() for k in ['date', 'time', 'period', 'day'])), None)
         rev_col = next((c for c in df.columns if any(k in c.lower() for k in ['revenue', 'sales', 'income', 'total'])), None)
-        exp_col = next((c for c in df.columns if any(k in c.lower() for k in ['expense', 'cost', 'spend', 'payout'])), None)
+        exp_col = next((c for c in df.columns if any(k in c.lower() for k in ['expense', 'cost', 'spend', 'payout', 'charges'])), None)
         prof_col = next((c for c in df.columns if any(k in c.lower() for k in ['profit', 'margin', 'net'])), None)
 
-        if not date_col:
-            # Fallback to created_at if no date column in data
-            df['date_parsed'] = pd.to_datetime(datetime.datetime.now())
-        else:
+        # 3. Handle Dates
+        if date_col:
             df['date_parsed'] = pd.to_datetime(df[date_col], errors='coerce')
-            df = df.dropna(subset=['date_parsed'])
+        else:
+            df['date_parsed'] = pd.to_datetime(df['sys_created_at'], errors='coerce')
+            
+        # Final fallback if still null
+        df['date_parsed'] = df['date_parsed'].fillna(pd.to_datetime(datetime.datetime.now()))
+        df = df.dropna(subset=['date_parsed'])
 
-        # 3. Handle Currency/Numbers
+        # 4. Handle Currency/Numbers
         for col in [rev_col, exp_col, prof_col]:
-            if col and df[col].dtype == object:
-                df[col] = pd.to_numeric(df[col].astype(str).str.replace(r'[^\d.]', '', regex=True), errors='coerce').fillna(0)
+            if col and col in df.columns:
+                if df[col].dtype == object:
+                    df[col] = pd.to_numeric(df[col].astype(str).str.replace(r'[^\d.]', '', regex=True), errors='coerce').fillna(0)
+                else:
+                    df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
 
-        # 4. Fill missing Profit if Revenue/Expense exists
+        # 5. Fill missing Profit if Revenue/Expense exists
         if rev_col and exp_col and (not prof_col or prof_col not in df.columns):
-            df['calculated_profit'] = df[rev_col] - df[exp_col]
-            prof_col = 'calculated_profit'
+            df['profit_generated'] = df[rev_col] - df[exp_col]
+            prof_col = 'profit_generated'
 
-        # 5. Filter by Date
+        # 6. Filter by Date
         if start_date:
             df = df[df['date_parsed'] >= pd.to_datetime(start_date)]
         if end_date:
             df = df[df['date_parsed'] <= pd.to_datetime(end_date)]
 
-        # 6. Time-based Aggregation
+        if df.empty:
+            return {"message": "Empty timeframe", "metrics": {}, "chart_data": [], "ai_synthesis": {}}
+
+        # 7. Time-based Aggregation
         df.set_index('date_parsed', inplace=True)
-        resampled = df.resample(frequency).agg({
-            col: 'sum' for col in [rev_col, exp_col, prof_col] if col
-        }).fillna(0)
+        agg_map = {col: 'sum' for col in [rev_col, exp_col, prof_col] if col and col in df.columns}
+        
+        if not agg_map:
+             return {"message": "No numeric columns found", "metrics": {}, "chart_data": [], "ai_synthesis": {}}
+
+        resampled = df.resample(frequency).agg(agg_map).fillna(0)
 
         # Reset index for JSON response
-        resampled.index = resampled.index.strftime('%Y-%m-%d')
-        chart_data = resampled.reset_index().to_dict(orient='records')
+        resampled_json = resampled.copy()
+        resampled_json.index = resampled_json.index.strftime('%Y-%m-%d')
+        chart_data = resampled_json.reset_index().rename(columns={'date_parsed': 'index'}).to_dict(orient='records')
 
-        # 7. KPI Calculations
-        total_rev = df[rev_col].sum() if rev_col else 0
-        total_exp = df[exp_col].sum() if exp_col else 0
-        total_prof = df[prof_col].sum() if prof_col else 0
+        # 8. KPI Calculations
+        total_rev = df[rev_col].sum() if rev_col and rev_col in df.columns else 0
+        total_exp = df[exp_col].sum() if exp_col and exp_col in df.columns else 0
+        total_prof = df[prof_col].sum() if prof_col and prof_col in df.columns else 0
         
-        # Period comparison (Last month vs current month if possible)
-        prev_prof = 0
-        if len(resampled) >= 2:
-            prev_prof = resampled[prof_col].iloc[-2] if prof_col else 0
-            curr_prof = resampled[prof_col].iloc[-1] if prof_col else 0
-            prof_growth = ((curr_prof - prev_prof) / prev_prof * 100) if prev_prof != 0 else 0
-        else:
-            prof_growth = 0
+        # Period comparison
+        prof_growth = 0
+        if prof_col and prof_col in resampled.columns and len(resampled) >= 2:
+            prev_val = resampled[prof_col].iloc[-2]
+            curr_val = resampled[prof_col].iloc[-1]
+            if prev_val > 0:
+                prof_growth = round(((curr_val - prev_val) / prev_val * 100), 2)
 
-        # 8. AI Insights for Aggregated View
-        summary_str = f"Unified report summary: Total Revenue: {total_rev}, Total Profit: {total_prof}, Period Growth: {prof_growth}%."
-        preview_json = resampled.tail(12).to_json()
-        ai_insights = await generate_ai_report_async(summary_str, preview_json, {"title": "Full Context Analysis", "domain": "Enterprise"})
+        # 9. AI Insights
+        summary_str = f"Unified report: Total Revenue: {total_rev}, Net Profit: {total_prof}, Period Variance: {prof_growth}%."
+        preview_json = resampled.tail(5).to_json()
+        ai_insights = await generate_ai_report_async(summary_str, preview_json, {"title": "Aggregated Context", "domain": "Business"})
 
         return {
             "metrics": {
                 "total_revenue": total_rev,
                 "total_expenses": total_exp,
                 "total_profit": total_prof,
-                "growth": round(prof_growth, 2),
-                "avg_period_profit": round(resampled[prof_col].mean(), 2) if prof_col else 0
+                "growth": prof_growth,
+                "avg_period_profit": round(resampled[prof_col].mean(), 2) if prof_col and prof_col in resampled.columns else 0
             },
             "chart_data": chart_data,
             "ai_synthesis": ai_insights,
