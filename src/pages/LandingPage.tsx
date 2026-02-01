@@ -36,15 +36,30 @@ const LandingPage = () => {
                     {/* Glowing Grid Section */}
                     <div className="mb-40">
                         <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1 }}
-                            className="text-4xl md:text-5xl font-poppins font-black text-white italic uppercase tracking-tighter mb-16 text-center"
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            viewport={{ once: true }}
+                            className="text-3xl md:text-4xl font-poppins font-black text-white italic uppercase tracking-tighter mb-16 text-center"
                         >
                             Intelligence Architecture
                         </motion.h2>
 
-                        <ul className="grid grid-cols-1 grid-rows-none gap-6 md:grid-cols-12 md:grid-rows-3 lg:gap-8 xl:grid-rows-2">
+                        <motion.ul
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={{ once: true, margin: "-100px" }}
+                            variants={{
+                                hidden: { opacity: 0 },
+                                show: {
+                                    opacity: 1,
+                                    transition: {
+                                        staggerChildren: 0.15
+                                    }
+                                }
+                            }}
+                            className="grid grid-cols-1 gap-6 md:grid-cols-12 lg:gap-8 auto-rows-fr"
+                        >
                             <GridItem
                                 area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
                                 icon={<Box className="h-6 w-6 text-indigo-400" />}
@@ -75,7 +90,7 @@ const LandingPage = () => {
                                 title="Deep Search"
                                 description="Traverse through millions of historical data points using natural language inquiries and semantic mapping."
                             />
-                        </ul>
+                        </motion.ul>
                     </div>
 
                     {/* Final CTA Section */}
@@ -86,19 +101,19 @@ const LandingPage = () => {
                             transition={{ duration: 1 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="text-5xl md:text-7xl font-poppins font-black text-white italic uppercase tracking-tighter mb-8">
+                            <h2 className="text-4xl md:text-6xl font-poppins font-black text-white italic uppercase tracking-tighter mb-8">
                                 Ready to scale?
                             </h2>
-                            <p className="text-slate-400 text-xl font-medium max-w-2xl mx-auto mb-12 uppercase tracking-widest leading-relaxed italic">
+                            <p className="text-slate-400 text-lg font-medium max-w-2xl mx-auto mb-12 uppercase tracking-widest leading-relaxed italic">
                                 Join the elite tier and convert data into insights.
                             </p>
 
                             <button
                                 onClick={handleTryNow}
-                                className="group relative inline-flex items-center gap-4 bg-white text-black px-12 py-6 rounded-full font-black text-2xl uppercase tracking-[0.2em] transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-white/10"
+                                className="group relative inline-flex items-center gap-4 bg-white text-black px-10 py-5 rounded-full font-black text-xl uppercase tracking-[0.2em] transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-white/10"
                             >
                                 TRY NOW
-                                <ArrowRight className="w-8 h-8 group-hover:translate-x-2 transition-transform" />
+                                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
 
                                 <div className="absolute inset-0 -z-10 bg-white/20 blur-2xl rounded-full scale-125 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </button>
@@ -129,8 +144,14 @@ interface GridItemProps {
 
 const GridItem = ({ area, icon, title, description }: GridItemProps) => {
     return (
-        <li className={cn("min-h-[14rem] list-none", area)}>
-            <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-white/10 p-2 md:rounded-[1.5rem] md:p-3">
+        <motion.li
+            variants={{
+                hidden: { opacity: 0, y: 20 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+            }}
+            className={cn("min-h-[14rem] list-none", area)}
+        >
+            <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-white/10 p-2 md:rounded-[1.5rem] md:p-3 group">
                 <GlowingEffect
                     spread={40}
                     glow={true}
@@ -139,23 +160,23 @@ const GridItem = ({ area, icon, title, description }: GridItemProps) => {
                     inactiveZone={0.01}
                     borderWidth={3}
                 />
-                <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] border-white/5 bg-zinc-900/50 p-6 shadow-sm md:p-6 backdrop-blur-sm">
+                <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] border-white/5 bg-zinc-900/50 p-6 shadow-sm md:p-6 backdrop-blur-sm transition-transform duration-500 group-hover:translate-y-[-4px]">
                     <div className="relative flex flex-1 flex-col justify-between gap-3">
-                        <div className="w-fit rounded-lg border-[0.75px] border-white/10 bg-white/5 p-3 group-hover:scale-110 transition-transform">
+                        <div className="w-fit rounded-lg border-[0.75px] border-white/10 bg-white/5 p-3 group-hover:scale-110 transition-transform bg-gradient-to-br from-white/10 to-transparent">
                             {icon}
                         </div>
                         <div className="space-y-3">
-                            <h3 className="pt-0.5 text-xl leading-[1.375rem] font-black font-poppins italic tracking-tight uppercase text-white">
+                            <h3 className="pt-0.5 text-lg leading-[1.375rem] font-black font-poppins italic tracking-tight uppercase text-white">
                                 {title}
                             </h3>
-                            <p className="font-inter text-sm leading-[1.125rem] md:text-base md:leading-[1.375rem] text-slate-400 italic uppercase tracking-wider">
+                            <p className="font-inter text-[13px] leading-[1.125rem] md:text-[14px] md:leading-[1.375rem] text-slate-400 italic uppercase tracking-wider">
                                 {description}
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </li>
+        </motion.li>
     );
 };
 

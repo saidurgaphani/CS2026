@@ -873,3 +873,2103 @@ INFO:     Started server process [24499]
 INFO:     Waiting for application startup.
 INFO:InsightAI:✅ Database client initialized
 INFO:     Application startup complete.
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:56228 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:56228 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56239 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56241 - "GET /reports HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [24499]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [25094]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+INFO:     127.0.0.1:56401 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56402 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56401 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56417 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56445 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56447 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56466 - "OPTIONS /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56468 - "OPTIONS /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:56466 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:56466 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56466 - "OPTIONS /analytics/aggregate?frequency=W HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:56468 - "GET /analytics/aggregate?frequency=W HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:56474 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:56476 - "GET /analytics/aggregate?frequency=W HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:56476 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56476 - "OPTIONS /analytics/aggregate?frequency=Y HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:56476 - "GET /analytics/aggregate?frequency=Y HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:56481 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56488 - "OPTIONS /analytics/chat HTTP/1.1" 200 OK
+ERROR:InsightAI:Chat Analysis Error: name 'model' is not defined
+INFO:     127.0.0.1:56488 - "POST /analytics/chat HTTP/1.1" 500 Internal Server Error
+ERROR:InsightAI:Chat Analysis Error: name 'model' is not defined
+INFO:     127.0.0.1:56494 - "POST /analytics/chat HTTP/1.1" 500 Internal Server Error
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56496 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56498 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56500 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56502 - "GET /reports HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [25094]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [25531]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [25531]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [25541]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [25541]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [26065]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [26065]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [26082]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+ERROR:InsightAI:Chat Analysis Error: 403 Your API key was reported as leaked. Please use another API key.
+INFO:     127.0.0.1:56565 - "POST /analytics/chat HTTP/1.1" 500 Internal Server Error
+ERROR:InsightAI:Chat Analysis Error: 403 Your API key was reported as leaked. Please use another API key.
+INFO:     127.0.0.1:56580 - "POST /analytics/chat HTTP/1.1" 500 Internal Server Error
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56582 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56584 - "GET /reports HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [26082]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [26311]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [26311]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [26321]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+WARNING:InsightAI:AI Chat failed, falling back to mock: 403 Your API key was reported as leaked. Please use another API key.
+INFO:     127.0.0.1:56611 - "POST /analytics/chat HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 403 Your API key was reported as leaked. Please use another API key.
+INFO:     127.0.0.1:56638 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+ERROR:InsightAI:AI Generation Error: 403 Your API key was reported as leaked. Please use another API key.
+INFO:     127.0.0.1:56638 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+WARNING:InsightAI:AI Chat failed, falling back to mock: 403 Your API key was reported as leaked. Please use another API key.
+INFO:     127.0.0.1:56652 - "POST /analytics/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56661 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56662 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56661 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56662 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56697 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56699 - "GET /reports HTTP/1.1" 200 OK
+WARNING:InsightAI:AI Chat failed, falling back to mock: 403 Your API key was reported as leaked. Please use another API key.
+INFO:     127.0.0.1:56701 - "POST /analytics/chat HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56784 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56786 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56814 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56815 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56814 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56815 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56821 - "OPTIONS /analytics/chat HTTP/1.1" 200 OK
+WARNING:InsightAI:AI Chat failed, falling back to mock: 403 Your API key was reported as leaked. Please use another API key.
+INFO:     127.0.0.1:56821 - "POST /analytics/chat HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56828 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56830 - "GET /reports HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [26321]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [27626]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [27626]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [27639]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [27639]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [27648]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [27648]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [27658]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [27658]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [27772]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:     127.0.0.1:56878 - "POST /analytics/chat HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56909 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:56911 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:     127.0.0.1:56914 - "POST /analytics/chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [27772]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [28190]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:     127.0.0.1:56987 - "POST /analytics/chat HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:     127.0.0.1:57017 - "POST /analytics/chat HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:     127.0.0.1:57024 - "POST /analytics/chat HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57037 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57039 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:     127.0.0.1:57043 - "POST /analytics/chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [28190]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [28713]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [28713]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [28725]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+INFO:     127.0.0.1:57089 - "OPTIONS /analytics/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57089 - "POST /analytics/chat HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:     127.0.0.1:57091 - "POST /analytics/chat HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [28725]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [28970]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [28970]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [28995]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [28995]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [29006]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+INFO:     127.0.0.1:57161 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57172 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57174 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57172 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57174 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57176 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57176 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57185 - "POST /analytics/chat HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:     127.0.0.1:57185 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57193 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57195 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57195 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57195 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57195 - "GET /analytics/chat/697eaecdabc6c95430adfff4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57199 - "POST /analytics/chat HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:     127.0.0.1:57199 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57205 - "GET /analytics/chat/697eaecdabc6c95430adfff4 HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57207 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57209 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57209 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57209 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57211 - "GET /analytics/chat/697eaefdabc6c95430adfff5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57216 - "GET /analytics/chat/697eaecdabc6c95430adfff4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57216 - "GET /analytics/chat/697eaefdabc6c95430adfff5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57240 - "GET /analytics/chat/697eaecdabc6c95430adfff4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57242 - "POST /analytics/chat HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:     127.0.0.1:57242 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57269 - "GET /analytics/chat/697eaf51abc6c95430adfff8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57271 - "GET /analytics/chat/697eaecdabc6c95430adfff4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57271 - "GET /analytics/chat/697eaf51abc6c95430adfff8 HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57271 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57275 - "GET /reports HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [29006]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [29427]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+INFO:     127.0.0.1:57300 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57300 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57300 - "GET /analytics/chat/697eaecdabc6c95430adfff4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57300 - "GET /analytics/chat/697eaecdabc6c95430adfff4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57309 - "OPTIONS /analytics/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57309 - "POST /analytics/chat HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:     127.0.0.1:57309 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57309 - "GET /analytics/chat/CHAT_1769910005.553498 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57309 - "GET /analytics/chat/CHAT_1769909960.231523 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57309 - "GET /analytics/chat/697eaecdabc6c95430adfff4 HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [29427]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [29600]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [29600]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [29623]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+INFO:     127.0.0.1:57340 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57353 - "GET /analytics/chat/697eaecdabc6c95430adfff4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57362 - "OPTIONS /analytics/chat/697eaecdabc6c95430adfff4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57362 - "DELETE /analytics/chat/697eaecdabc6c95430adfff4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57362 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57364 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57369 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57364 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57369 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57369 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57369 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57371 - "GET /analytics/chat/CHAT_1769910005.553498 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57371 - "GET /analytics/chat/CHAT_1769909960.231523 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57371 - "GET /analytics/chat/CHAT_1769910005.553498 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57371 - "OPTIONS /analytics/chat/CHAT_1769910005.553498 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57371 - "DELETE /analytics/chat/CHAT_1769910005.553498 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57371 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57382 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57384 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 0 reports for user rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:     127.0.0.1:57393 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 0 reports for user rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:     127.0.0.1:57393 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57400 - "OPTIONS /upload HTTP/1.1" 200 OK
+INFO:InsightAI:🚀 Processing upload: 'report_data (1)' for user rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:🧠 Requesting AI synthesis...
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:InsightAI:💾 Archiving structured data to database...
+INFO:InsightAI:✅ Report 'REP_20260201072105' generated successfully
+INFO:     127.0.0.1:57400 - "POST /upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57413 - "OPTIONS /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57414 - "OPTIONS /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:     127.0.0.1:57413 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:     127.0.0.1:57416 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 1 reports for user rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:     127.0.0.1:57424 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 1 reports for user rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:     127.0.0.1:57426 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "GET /analytics/chats?user_id=rFIabg6CXpWJkeeed4UvoTwD6iD2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "GET /analytics/chats?user_id=rFIabg6CXpWJkeeed4UvoTwD6iD2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57431 - "POST /analytics/chat HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:     127.0.0.1:57431 - "GET /analytics/chats?user_id=rFIabg6CXpWJkeeed4UvoTwD6iD2 HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 1 reports for user rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:     127.0.0.1:57434 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 1 reports for user rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:     127.0.0.1:57436 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57440 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57442 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57442 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57442 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57442 - "GET /analytics/chat/CHAT_1769909960.231523 HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57442 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57447 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57450 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57452 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57447 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:     127.0.0.1:57447 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57456 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57456 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57474 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57480 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57480 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57501 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57501 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57501 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57517 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57525 - "GET /analytics/chat/CHAT_1769909960.231523 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57528 - "GET /analytics/chat/CHAT_1769909960.231523 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57543 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57646 - "GET /analytics/chat/CHAT_1769909960.231523 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57648 - "OPTIONS /analytics/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57648 - "POST /analytics/chat HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:     127.0.0.1:57648 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57664 - "POST /analytics/chat HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:     127.0.0.1:57664 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57671 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57673 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57671 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57673 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57715 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57715 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57718 - "GET /analytics/chat/CHAT_1769911453.90285 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57721 - "GET /analytics/chat/CHAT_1769911453.90285 HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57723 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57725 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57728 - "OPTIONS /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57729 - "OPTIONS /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57734 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57737 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57728 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 50.305811494s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 50
+}
+]
+INFO:     127.0.0.1:57728 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57770 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57772 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57845 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57845 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57849 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57851 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 2.776969815s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 2
+}
+]
+INFO:     127.0.0.1:57851 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 1.5507661s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 1
+}
+]
+INFO:     127.0.0.1:57851 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57855 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57857 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57923 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57923 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57963 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57963 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57966 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57968 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57968 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57966 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57966 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57968 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57971 - "OPTIONS /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57972 - "OPTIONS /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 15.560090434s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 15
+}
+]
+INFO:     127.0.0.1:57971 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 14.037042219s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 14
+}
+]
+INFO:     127.0.0.1:57972 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57979 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:57981 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 34.907380794s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 34
+}
+]
+INFO:     127.0.0.1:57993 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 33.621580803s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 33
+}
+]
+INFO:     127.0.0.1:57996 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58008 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58008 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58008 - "GET /analytics/chat/CHAT_1769911453.90285 HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58014 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58017 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 51.50990883s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 51
+}
+]
+INFO:     127.0.0.1:58022 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 46.684368681s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 46
+}
+]
+INFO:     127.0.0.1:58022 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58033 - "OPTIONS /analytics/aggregate?frequency=Y HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58035 - "OPTIONS /analytics/aggregate?frequency=W HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 37.994269078s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 37
+}
+]
+INFO:     127.0.0.1:58033 - "GET /analytics/aggregate?frequency=Y HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 36.078287253s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 36
+}
+]
+INFO:     127.0.0.1:58035 - "GET /analytics/aggregate?frequency=W HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 34.664692695s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 34
+}
+]
+INFO:     127.0.0.1:58043 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 30.914697716s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 30
+}
+]
+INFO:     127.0.0.1:58043 - "GET /analytics/aggregate?frequency=Y HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 27.35021216s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 27
+}
+]
+INFO:     127.0.0.1:58043 - "GET /analytics/aggregate?frequency=W HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58059 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58061 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58097 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58099 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58190 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58248 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58248 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:     127.0.0.1:58250 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58250 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58248 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58250 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58248 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58250 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 31.730346981s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 31
+}
+]
+INFO:     127.0.0.1:58248 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 28.912481242s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 28
+}
+]
+INFO:     127.0.0.1:58250 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58268 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58270 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58360 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58360 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58366 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58367 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58366 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58367 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58586 - "OPTIONS /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58587 - "OPTIONS /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 49.166609369s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 49
+}
+]
+INFO:     127.0.0.1:58586 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 47.434091764s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 47
+}
+]
+INFO:     127.0.0.1:58586 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58604 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58606 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58629 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58631 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58683 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58685 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58765 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58765 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58800 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58801 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58800 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58801 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 57.776272558s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 57
+}
+]
+INFO:     127.0.0.1:58803 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 56.373173555s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 56
+}
+]
+INFO:     127.0.0.1:58803 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58821 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58823 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 34.531023107s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 34
+}
+]
+INFO:     127.0.0.1:58857 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 32.825411802s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 32
+}
+]
+INFO:     127.0.0.1:58857 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58861 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:58870 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59071 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59071 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:59075 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:59077 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59077 - "OPTIONS /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59075 - "OPTIONS /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 34.30010266s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 34
+}
+]
+INFO:     127.0.0.1:59077 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 33.310657067s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 33
+}
+]
+INFO:     127.0.0.1:59075 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:59114 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:59116 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59419 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59421 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 1 reports for user rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:     127.0.0.1:59419 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 1 reports for user rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:     127.0.0.1:59421 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59895 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59897 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 1 reports for user rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:     127.0.0.1:59895 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 1 reports for user rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:     127.0.0.1:59897 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 1 reports for user rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:     127.0.0.1:59903 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 1 reports for user rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:🔍 Fetching reports for user: rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 1 reports for user rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:🔍 Fetching reports for user: rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 1 reports for user rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:     127.0.0.1:59912 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 1 reports for user rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:     127.0.0.1:59914 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 1 reports for user rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:     127.0.0.1:59928 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 1 reports for user rFIabg6CXpWJkeeed4UvoTwD6iD2
+INFO:     127.0.0.1:59930 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60724 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:60724 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:60923 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60929 - "OPTIONS /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:     127.0.0.1:60929 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:60948 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 10.970844206s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 10
+}
+]
+INFO:     127.0.0.1:60952 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60952 - "OPTIONS /analytics/aggregate?frequency=Y HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 7.289936213s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 7
+}
+]
+INFO:     127.0.0.1:60952 - "GET /analytics/aggregate?frequency=Y HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60952 - "OPTIONS /analytics/aggregate?frequency=W HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 4.830550021s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 4
+}
+]
+INFO:     127.0.0.1:60952 - "GET /analytics/aggregate?frequency=W HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60952 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:60966 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:61110 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:61145 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61249 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:61249 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61262 - "OPTIONS /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 36.035120508s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 36
+}
+]
+INFO:     127.0.0.1:61262 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:61263 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61270 - "OPTIONS /upload HTTP/1.1" 200 OK
+INFO:InsightAI:🚀 Processing upload: 'unstructured_data' for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:🧠 Requesting AI synthesis...
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 23.880239444s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 23
+}
+]
+INFO:InsightAI:💾 Archiving structured data to database...
+INFO:InsightAI:✅ Report 'REP_20260201095836' generated successfully
+INFO:     127.0.0.1:61270 - "POST /upload HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [29623]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [36736]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 3 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:61351 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:61539 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🚀 Processing upload: 'unstructured_data' for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:🧠 Requesting AI synthesis...
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 28.701317906s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 28
+}
+]
+INFO:InsightAI:💾 Archiving structured data to database...
+INFO:InsightAI:✅ Report 'REP_20260201100631' generated successfully
+INFO:     127.0.0.1:61568 - "POST /upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61576 - "OPTIONS /reports/REP_20260201100631 HTTP/1.1" 200 OK
+INFO:InsightAI:🗑️ Deleting report: REP_20260201100631
+INFO:     127.0.0.1:61576 - "DELETE /reports/REP_20260201100631 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61591 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:61591 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 21.774577581s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 21
+}
+]
+INFO:     127.0.0.1:61591 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61661 - "OPTIONS /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 29.871831263s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 29
+}
+]
+INFO:     127.0.0.1:61661 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61667 - "OPTIONS /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:61667 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61672 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:61672 - "GET /reports HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61682 - "OPTIONS /upload HTTP/1.1" 200 OK
+INFO:InsightAI:🚀 Processing upload: 'unstructured_data' for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:🧠 Requesting AI synthesis...
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 27.013248453s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 27
+}
+]
+INFO:InsightAI:💾 Archiving structured data to database...
+INFO:InsightAI:✅ Report 'REP_20260201101333' generated successfully
+INFO:     127.0.0.1:61682 - "POST /upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61688 - "OPTIONS /reports/REP_20260201101333 HTTP/1.1" 200 OK
+INFO:InsightAI:🗑️ Deleting report: REP_20260201101333
+INFO:     127.0.0.1:61688 - "DELETE /reports/REP_20260201101333 HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [36736]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [37054]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [37054]
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=5, pipe_handle=7)
+                                                  ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                                  run_name="__mp_main__")
+  File "<frozen runpy>", line 286, in run_path
+  File "<frozen runpy>", line 259, in _get_code_from_file
+  File "/Users/saidurgaphani/CS2026/server/main.py", line 257
+    if unstructured:
+    ^^
+SyntaxError: expected 'except' or 'finally' block
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=5, pipe_handle=7)
+                                                  ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                                  run_name="__mp_main__")
+  File "<frozen runpy>", line 286, in run_path
+  File "<frozen runpy>", line 259, in _get_code_from_file
+  File "/Users/saidurgaphani/CS2026/server/main.py", line 257
+    if unstructured:
+    ^^
+SyntaxError: expected 'except' or 'finally' block
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [37308]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
+INFO:InsightAI:🚀 Processing upload: 'unstructured_data' for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:🧹 Initiating Deep Cleaning & Optimization Protocol...
+INFO:InsightAI:✨ Data Optimized. Shape: (1500, 1)
+INFO:InsightAI:🧠 Requesting AI synthesis on Optimized Data...
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 47.097339712s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 47
+}
+]
+INFO:InsightAI:💾 Archiving structured data to database...
+INFO:     127.0.0.1:61769 - "GET /analytics/chats?user_id=BwOf3IwKiUg9fQMsyby7JLXbmxv1 HTTP/1.1" 200 OK
+INFO:InsightAI:✅ Report 'REP_20260201102313' generated successfully
+INFO:InsightAI:🔄 AI Provider: Loading model with key AIzaSyCEdp...
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+ERROR:InsightAI:AI Generation Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 40.346422269s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 40
+}
+]
+INFO:     127.0.0.1:61766 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 200 OK

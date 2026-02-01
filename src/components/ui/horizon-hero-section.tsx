@@ -481,18 +481,17 @@ export const HorizonHero = () => {
         .hero-title {
           font-family: 'Outfit', sans-serif;
           font-weight: 900;
-          font-size: 15vw;
+          font-size: clamp(3rem, 12vw, 10rem);
           color: white;
           letter-spacing: -0.05em;
           margin: 0;
           line-height: 0.8;
           opacity: 1.0;
-          font-style: italic;
         }
         .hero-subtitle {
-          font-family: 'Inter', sans-serif;
+          font-family: 'Work Sans', sans-serif;
           color: rgba(255, 255, 255, 0.95);
-          font-size: 1.25rem;
+          font-size: clamp(0.9rem, 1.5vw, 1.25rem);
           margin-top: 2rem;
           text-transform: uppercase;
           letter-spacing: 0.5em;

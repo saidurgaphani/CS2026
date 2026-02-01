@@ -8,7 +8,9 @@ import {
     sendPasswordResetEmail
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useAuth } from "@/lib/AuthContext";
+import { motion } from "framer-motion";
 
 const sampleTestimonials: Testimonial[] = [
     {
@@ -33,56 +35,86 @@ const sampleTestimonials: Testimonial[] = [
 
 const SignInPageDemo = () => {
     const navigate = useNavigate();
+    const { user } = useAuth();
     const [error, setError] = useState<string | null>(null);
+    const [isSigningIn, setIsSigningIn] = useState(false);
+
+    // Single source of truth for redirection
+    useEffect(() => {
+        if (user) {
+            console.log("User detected, redirecting to dashboard...");
+            navigate("/dashboard");
+        }
+    }, [user, navigate]);
 
     const handleSignIn = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        if (isSigningIn) return;
+
         setError(null);
+        setIsSigningIn(true);
         const formData = new FormData(event.currentTarget);
         const email = formData.get("email") as string;
         const password = formData.get("password") as string;
 
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            navigate("/dashboard");
         } catch (err: any) {
             setError(err.message);
             console.error("Sign In Error:", err);
-            alert(`Sign In Failed: ${err.message}`);
+            setIsSigningIn(false);
         }
     };
 
     const handleSignUp = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        if (isSigningIn) return;
+
         setError(null);
+        setIsSigningIn(true);
         const formData = new FormData(event.currentTarget);
         const email = formData.get("email") as string;
         const password = formData.get("password") as string;
         const confirmPassword = formData.get("confirmPassword") as string;
 
         if (password !== confirmPassword) {
-            alert("Passwords do not match!");
+            setError("Passwords do not match!");
+            setIsSigningIn(false);
             return;
         }
 
         try {
             await createUserWithEmailAndPassword(auth, email, password);
-            navigate("/dashboard");
         } catch (err: any) {
             setError(err.message);
             console.error("Sign Up Error:", err);
-            alert(`Sign Up Failed: ${err.message}`);
+            setIsSigningIn(false);
         }
     };
 
     const handleGoogleSignIn = async () => {
+        if (isSigningIn) return;
+
+        setError(null);
+        setIsSigningIn(true);
+        console.log("Initiating Google Sign-In Popup...");
+
         const provider = new GoogleAuthProvider();
+        provider.setCustomParameters({ prompt: 'select_account' });
+
         try {
-            await signInWithPopup(auth, provider);
-            navigate("/dashboard");
+            const result = await signInWithPopup(auth, provider);
+            console.log("Google Auth Success:", result.user.email);
         } catch (err: any) {
-            console.error("Google Sign In Error:", err);
-            alert(`Google Sign In Failed: ${err.message}`);
+            console.error("Google Auth Error:", err);
+            if (err.code === 'auth/popup-closed-by-user') {
+                setError("The sign-in popup was closed before completion. Please try again.");
+            } else if (err.code === 'auth/cancelled-popup-request') {
+                setError("Only one sign-in attempt allowed at a time.");
+            } else {
+                setError(err.message);
+            }
+            setIsSigningIn(false);
         }
     };
 
@@ -108,8 +140,18 @@ const SignInPageDemo = () => {
                 onSignUp={handleSignUp}
                 onGoogleSignIn={handleGoogleSignIn}
                 onResetPassword={handleResetPassword}
+                isLoading={isSigningIn}
             />
-            {error && <div className="fixed bottom-4 right-4 bg-destructive text-destructive-foreground p-4 rounded-lg shadow-lg">{error}</div>}
+            {error && (
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] px-6 py-3 bg-rose-500 text-white rounded-2xl shadow-2xl flex items-center gap-3 backdrop-blur-xl max-w-[90vw] w-max"
+                >
+                    <div className="w-2 h-2 bg-white rounded-full animate-pulse shrink-0" />
+                    <span className="text-xs font-black uppercase tracking-widest truncate">{error}</span>
+                </motion.div>
+            )}
         </div>
     );
 };

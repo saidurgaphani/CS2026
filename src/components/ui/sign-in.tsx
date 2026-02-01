@@ -33,6 +33,7 @@ interface SignInPageProps {
     onResetPassword?: () => void;
     onCreateAccount?: () => void;
     initialMode?: 'signin' | 'signup';
+    isLoading?: boolean;
 }
 
 // --- SUB-COMPONENTS ---
@@ -66,6 +67,7 @@ export const SignInPage: React.FC<SignInPageProps> = ({
     onGoogleSignIn,
     onResetPassword,
     initialMode = 'signin',
+    isLoading = false,
 }) => {
     const [mode, setMode] = useState<'signin' | 'signup'>(initialMode);
     const [showPassword, setShowPassword] = useState(false);
@@ -129,8 +131,19 @@ export const SignInPage: React.FC<SignInPageProps> = ({
                                 </div>
                             )}
 
-                            <button type="submit" className={`animate-element ${isSignIn ? 'animate-delay-600' : 'animate-delay-700'} w-full rounded-2xl bg-primary py-4 font-medium text-primary-foreground hover:bg-primary/90 transition-colors `}>
-                                {isSignIn ? 'Sign In' : 'Create Account'}
+                            <button
+                                type="submit"
+                                disabled={isLoading}
+                                className={`animate-element ${isSignIn ? 'animate-delay-600' : 'animate-delay-700'} w-full rounded-2xl bg-primary py-4 font-medium text-primary-foreground hover:bg-primary/90 transition-all ${isLoading ? 'opacity-50 cursor-not-allowed scale-[0.98]' : 'active:scale-[0.98]'}`}
+                            >
+                                {isLoading ? (
+                                    <div className="flex items-center justify-center gap-2">
+                                        <div className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
+                                        <span>Processing...</span>
+                                    </div>
+                                ) : (
+                                    isSignIn ? 'Sign In' : 'Create Account'
+                                )}
                             </button>
                         </form>
 
@@ -139,9 +152,17 @@ export const SignInPage: React.FC<SignInPageProps> = ({
                             <span className="px-4 text-sm text-muted-foreground bg-background absolute">Or continue with</span>
                         </div>
 
-                        <button onClick={onGoogleSignIn} className={`animate-element ${isSignIn ? 'animate-delay-800' : 'animate-delay-900'} w-full flex items-center justify-center gap-3 border border-border rounded-2xl py-4 hover:bg-secondary transition-colors `}>
+                        <button
+                            type="button"
+                            disabled={isLoading}
+                            onClick={() => {
+                                console.log("Google button clicked");
+                                onGoogleSignIn?.();
+                            }}
+                            className={`animate-element ${isSignIn ? 'animate-delay-800' : 'animate-delay-900'} w-full flex items-center justify-center gap-3 border border-border rounded-2xl py-4 hover:bg-secondary transition-all ${isLoading ? 'opacity-50 cursor-not-allowed' : 'active:scale-[0.98]'} `}
+                        >
                             <GoogleIcon />
-                            Continue with Google
+                            <span>Continue with Google</span>
                         </button>
 
                         <p className={`animate-element ${isSignIn ? 'animate-delay-900' : 'animate-delay-1000'} text-center text-sm text-muted-foreground `}>

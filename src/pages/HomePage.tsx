@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Github, Twitter, Layers, LogOut } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import { auth } from '../lib/firebase'
 
 const HomePage = () => {
+    const navigate = useNavigate();
     const handleLogout = async () => {
         try {
             await auth.signOut();
+            navigate('/');
         } catch (err) {
             console.error("Logout error:", err);
         }
