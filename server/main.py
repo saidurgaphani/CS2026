@@ -224,6 +224,109 @@ async def process_upload(
         logger.error(f"🔥 Critical Final Process Error: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.get("/analytics/aggregate")
+async def get_aggregate_analytics(
+    user_id: str = Header(...),
+    frequency: str = "M", # W, M, Y
+    start_date: Optional[str] = None,
+    end_date: Optional[str] = None
+):
+    """Merges all user datasets and performs comprehensive analysis."""
+    if not hasattr(app, 'db') or app.db is None:
+        raise HTTPException(status_code=503, detail="Database connection offline")
+
+    try:
+        # 1. Fetch all reports
+        cursor = app.db.reports.find({"user_id": user_id})
+        all_rows = []
+        async for doc in cursor:
+            data = doc.get("cleaned_data", [])
+            all_rows.extend(data)
+        
+        if not all_rows:
+            return {"message": "No data found", "metrics": {}, "charts": {}}
+
+        df = pd.DataFrame(all_rows)
+
+        # 2. Identify Columns
+        date_col = next((c for c in df.columns if any(k in c.lower() for k in ['date', 'time', 'period', 'day'])), None)
+        rev_col = next((c for c in df.columns if any(k in c.lower() for k in ['revenue', 'sales', 'income', 'total'])), None)
+        exp_col = next((c for c in df.columns if any(k in c.lower() for k in ['expense', 'cost', 'spend', 'payout'])), None)
+        prof_col = next((c for c in df.columns if any(k in c.lower() for k in ['profit', 'margin', 'net'])), None)
+
+        if not date_col:
+            # Fallback to created_at if no date column in data
+            df['date_parsed'] = pd.to_datetime(datetime.datetime.now())
+        else:
+            df['date_parsed'] = pd.to_datetime(df[date_col], errors='coerce')
+            df = df.dropna(subset=['date_parsed'])
+
+        # 3. Handle Currency/Numbers
+        for col in [rev_col, exp_col, prof_col]:
+            if col and df[col].dtype == object:
+                df[col] = pd.to_numeric(df[col].astype(str).str.replace(r'[^\d.]', '', regex=True), errors='coerce').fillna(0)
+
+        # 4. Fill missing Profit if Revenue/Expense exists
+        if rev_col and exp_col and (not prof_col or prof_col not in df.columns):
+            df['calculated_profit'] = df[rev_col] - df[exp_col]
+            prof_col = 'calculated_profit'
+
+        # 5. Filter by Date
+        if start_date:
+            df = df[df['date_parsed'] >= pd.to_datetime(start_date)]
+        if end_date:
+            df = df[df['date_parsed'] <= pd.to_datetime(end_date)]
+
+        # 6. Time-based Aggregation
+        df.set_index('date_parsed', inplace=True)
+        resampled = df.resample(frequency).agg({
+            col: 'sum' for col in [rev_col, exp_col, prof_col] if col
+        }).fillna(0)
+
+        # Reset index for JSON response
+        resampled.index = resampled.index.strftime('%Y-%m-%d')
+        chart_data = resampled.reset_index().to_dict(orient='records')
+
+        # 7. KPI Calculations
+        total_rev = df[rev_col].sum() if rev_col else 0
+        total_exp = df[exp_col].sum() if exp_col else 0
+        total_prof = df[prof_col].sum() if prof_col else 0
+        
+        # Period comparison (Last month vs current month if possible)
+        prev_prof = 0
+        if len(resampled) >= 2:
+            prev_prof = resampled[prof_col].iloc[-2] if prof_col else 0
+            curr_prof = resampled[prof_col].iloc[-1] if prof_col else 0
+            prof_growth = ((curr_prof - prev_prof) / prev_prof * 100) if prev_prof != 0 else 0
+        else:
+            prof_growth = 0
+
+        # 8. AI Insights for Aggregated View
+        summary_str = f"Unified report summary: Total Revenue: {total_rev}, Total Profit: {total_prof}, Period Growth: {prof_growth}%."
+        preview_json = resampled.tail(12).to_json()
+        ai_insights = await generate_ai_report_async(summary_str, preview_json, {"title": "Full Context Analysis", "domain": "Enterprise"})
+
+        return {
+            "metrics": {
+                "total_revenue": total_rev,
+                "total_expenses": total_exp,
+                "total_profit": total_prof,
+                "growth": round(prof_growth, 2),
+                "avg_period_profit": round(resampled[prof_col].mean(), 2) if prof_col else 0
+            },
+            "chart_data": chart_data,
+            "ai_synthesis": ai_insights,
+            "column_mapping": {
+                "date": date_col,
+                "revenue": rev_col,
+                "expenses": exp_col,
+                "profit": prof_col
+            }
+        }
+    except Exception as e:
+        logger.error(f"🔥 Aggregation Error: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
 @app.get("/reports")
 async def get_user_reports(user_id: str = Header(...)):
     """Fetch user-scoped archives from database."""

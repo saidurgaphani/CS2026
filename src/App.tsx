@@ -5,6 +5,8 @@ import Dashboard from './pages/Dashboard';
 import { AuthProvider } from './lib/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 
+import InsightsVault from './pages/InsightsVault';
+
 function App() {
   return (
     <AuthProvider>
@@ -17,6 +19,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/insights"
+            element={
+              <ProtectedRoute>
+                <InsightsVault />
               </ProtectedRoute>
             }
           />

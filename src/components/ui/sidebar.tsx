@@ -1,6 +1,5 @@
-"use client";
-
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     LogOut,
@@ -9,7 +8,8 @@ import {
     UploadCloud,
     Menu,
     X,
-    User as UserIcon
+    User as UserIcon,
+    Zap
 } from "lucide-react";
 import { useAuth } from "@/lib/AuthContext";
 import { auth } from "@/lib/firebase";
@@ -38,14 +38,27 @@ const AnimatedMenuToggle = ({
 const Sidebar = ({ activeTab, setActiveTab }: SidebarProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const { user } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const handleLogout = () => auth.signOut();
 
     const menuItems = [
-        { id: 'dashboard', label: 'Overview', icon: <LayoutDashboard className="w-5 h-5" /> },
-        { id: 'reports', label: 'Archives', icon: <Layers className="w-5 h-5" /> },
-        { id: 'upload', label: 'Upload', icon: <UploadCloud className="w-5 h-5" /> },
+        { id: 'dashboard', label: 'Overview', icon: <LayoutDashboard className="w-5 h-5" />, path: '/dashboard' },
+        { id: 'insights', label: 'Intelligence', icon: <Zap className="w-5 h-5 font-bold" />, path: '/insights' },
+        { id: 'reports', label: 'Archives', icon: <Layers className="w-5 h-5" />, path: '/dashboard' },
+        { id: 'upload', label: 'Upload Feed', icon: <UploadCloud className="w-5 h-5" />, path: '/dashboard' },
     ];
+
+    const currentPath = location.pathname;
+
+    const handleNav = (item: any) => {
+        if (item.path !== currentPath) {
+            navigate(item.path);
+        }
+        setActiveTab(item.id);
+        setIsOpen(false);
+    };
 
     const mobileSidebarVariants = {
         hidden: { x: "-100%", opacity: 0 },
@@ -81,7 +94,7 @@ const Sidebar = ({ activeTab, setActiveTab }: SidebarProps) => {
                             <SidebarContent
                                 user={user}
                                 activeTab={activeTab}
-                                setActiveTab={(tab) => { setActiveTab(tab); setIsOpen(false); }}
+                                onNav={handleNav}
                                 menuItems={menuItems}
                                 onLogout={handleLogout}
                             />
@@ -95,7 +108,7 @@ const Sidebar = ({ activeTab, setActiveTab }: SidebarProps) => {
                 <SidebarContent
                     user={user}
                     activeTab={activeTab}
-                    setActiveTab={setActiveTab}
+                    onNav={handleNav}
                     menuItems={menuItems}
                     onLogout={handleLogout}
                 />
@@ -104,38 +117,39 @@ const Sidebar = ({ activeTab, setActiveTab }: SidebarProps) => {
     );
 };
 
-const SidebarContent = ({ user, activeTab, setActiveTab, menuItems, onLogout }: {
+const SidebarContent = ({ user, activeTab, onNav, menuItems, onLogout }: {
     user: any;
     activeTab: string;
-    setActiveTab: (tab: string) => void;
+    onNav: (item: any) => void;
     menuItems: any[];
     onLogout: () => void;
 }) => (
     <div className="flex flex-col h-full py-6">
         {/* Profile Section */}
         <div className="px-6 mb-8">
-            <div className="flex items-center gap-4 p-4 bg-slate-50 rounded-3xl border border-slate-100">
+            <div className="flex items-center gap-4 p-4 bg-slate-50 rounded-3xl border border-slate-100 shadow-sm">
                 {user?.photoURL ? (
-                    <img src={user.photoURL} alt="Profile" className="w-12 h-12 rounded-full ring-2 ring-indigo-500/20" />
+                    <img src={user.photoURL} alt="Profile" className="w-12 h-12 rounded-full ring-2 ring-indigo-500/10" />
                 ) : (
-                    <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600">
+                    <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 border border-indigo-200 shadow-inner">
                         <UserIcon className="w-6 h-6" />
                     </div>
                 )}
-                <div className="min-w-0">
-                    <p className="font-poppins font-bold text-slate-900 truncate">{user?.displayName || 'User Session'}</p>
-                    <p className="text-xs font-medium text-slate-500 truncate">{user?.email || 'authenticated'}</p>
+                <div className="min-w-0 pr-2">
+                    <p className="font-poppins font-black text-slate-900 truncate text-sm tracking-tight">{user?.displayName || 'Insightra User'}</p>
+                    <p className="text-[10px] font-bold text-slate-400 truncate uppercase tracking-widest">{user?.email ? 'PRO ACCOUNT' : 'GUEST'}</p>
                 </div>
             </div>
         </div>
 
         {/* Brand Section */}
-        <div className="px-8 mb-8 pb-4 border-b border-slate-50">
-            <div className="flex items-center gap-3 italic">
-                                <span className="font-poppins font-black text-xl tracking-tighter text-slate-900 uppercase">Insightra</span>
-               
-
+        <div className="px-8 mb-8 pb-4 border-b border-slate-50 flex items-center justify-between">
+            <div className="flex items-center gap-2 italic">
+                <span className="font-poppins font-black text-xl tracking-tighter text-slate-900 uppercase">
+                    In<span className="text-indigo-600">sight</span>ra
+                </span>
             </div>
+            <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
         </div>
 
         {/* Navigation */}
@@ -143,15 +157,15 @@ const SidebarContent = ({ user, activeTab, setActiveTab, menuItems, onLogout }: 
             {menuItems.map((item: any) => (
                 <button
                     key={item.id}
-                    onClick={() => setActiveTab(item.id)}
+                    onClick={() => onNav(item)}
                     className={`
-            flex items-center gap-4 w-full px-5 py-4 rounded-2xl transition-all font-bold uppercase tracking-widest text-[10px]
+            flex items-center gap-4 w-full px-5 py-4 rounded-2xl transition-all font-black uppercase tracking-widest text-[10px]
             ${activeTab === item.id
-                            ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-200'
-                            : 'text-slate-400 hover:text-indigo-600 hover:bg-slate-50'}
+                            ? 'bg-slate-900 text-white shadow-xl shadow-slate-200'
+                            : 'text-slate-400 hover:text-slate-900 hover:bg-slate-50'}
           `}
                 >
-                    {item.icon}
+                    <span className={`${activeTab === item.id ? 'text-indigo-400' : ''}`}>{item.icon}</span>
                     <span>{item.label}</span>
                 </button>
             ))}
@@ -161,7 +175,7 @@ const SidebarContent = ({ user, activeTab, setActiveTab, menuItems, onLogout }: 
         <div className="px-4 pt-4 border-t border-slate-100">
             <button
                 onClick={onLogout}
-                className="flex items-center gap-4 w-full px-5 py-4 rounded-2xl text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-all font-bold uppercase tracking-widest text-[10px]"
+                className="flex items-center gap-4 w-full px-5 py-4 rounded-2xl text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-all font-black uppercase tracking-widest text-[10px]"
             >
                 <LogOut className="w-5 h-5" />
                 <span>Sign Out</span>
