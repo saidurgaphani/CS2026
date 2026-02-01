@@ -131,6 +131,36 @@ async def generate_ai_report_async(df_summary: str, content_preview: str, metada
         logger.error(f"AI Generation Error: {str(e)}")
         return get_mock_ai_response()
 
+async def structure_unstructured_data(text: str, domain: str = "General") -> list:
+    """Uses AI to extract structured business records from raw text."""
+    if not GEMINI_API_KEY or "<" in GEMINI_API_KEY:
+        return []
+        
+    prompt = f"""
+    You are a Data Engineering AI. Extract business/financial transaction records from the following unstructured text.
+    
+    Context:
+    Business Domain: {domain}
+    Raw Text: {text[:5000]}
+    
+    Requirements:
+    1. Identify records that look like transactions or performance logs.
+    2. For each record, extract: Date (YYYY-MM-DD), Revenue, Expense, and Description.
+    3. Return them as a standardized list of JSON objects.
+    4. Ensure numbers are clean (no symbols).
+    5. If no records found, return [].
+    
+    Return ONLY a raw JSON array.
+    """
+    try:
+        response = await model.generate_content_async(prompt)
+        res_text = response.text.replace("```json", "").replace("```", "").strip()
+        data = json.loads(res_text)
+        return data if isinstance(data, list) else []
+    except Exception as e:
+        logger.error(f"Data Structuring Error: {str(e)}")
+        return []
+
 def get_mock_ai_response():
     return {
         "executive_summary": "Analysis indicates consistent operational reliability but highlights a 15% increase in overhead. Strategic focus on logistics efficiency is recommended.",
@@ -165,6 +195,7 @@ async def process_upload(
         filename = file.filename
         
         # 1. Parse Data
+        unstructured = False
         try:
             if filename.endswith('.csv'):
                 df = pd.read_csv(io.BytesIO(content))
@@ -173,8 +204,15 @@ async def process_upload(
             elif filename.endswith('.json'):
                 df = pd.read_json(io.BytesIO(content))
             else:
+                unstructured = True
                 text = content.decode('utf-8', errors='ignore')
-                df = pd.DataFrame([{"content": text}])
+                logger.info("🧩 Unstructured data detected. Triggering AI Structuring Layer...")
+                structured_list = await structure_unstructured_data(text, domain)
+                if structured_list:
+                    df = pd.DataFrame(structured_list)
+                else:
+                    logger.warning("⚠️ AI Structuring returned no records. Using raw backup.")
+                    df = pd.DataFrame([{"raw_content": text, "date": datetime.datetime.now().isoformat()}])
         except Exception as e:
             logger.error(f"Parsing failed: {e}")
             raise HTTPException(status_code=400, detail="Could not parse file format.")
@@ -183,8 +221,12 @@ async def process_upload(
         df = clean_data(df)
         
         # 3. Step: AI Summary
-        df_summary = df.describe().to_string()
-        content_preview = df.head(10).to_json()
+        try:
+            df_summary = df.describe().to_string()
+            content_preview = df.head(10).to_json()
+        except:
+            df_summary = "Non-numeric or sparse data"
+            content_preview = df.to_json() if len(df) < 20 else df.head(10).to_json()
         
         logger.info("🧠 Requesting AI synthesis...")
         ai_res = await generate_ai_report_async(df_summary, content_preview, {"title": title, "domain": domain})
@@ -203,13 +245,13 @@ async def process_upload(
             "executive_summary": ai_res.get("executive_summary"),
             "insights": ai_res.get("insights"),
             "cleaned_data": cleaned_json,
+            "is_unstructured": unstructured,
             "status": "completed",
             "created_at": datetime.datetime.now().isoformat()
         }
         
         logger.info("💾 Archiving structured data to database...")
         try:
-            # Set a timeout for the DB operation
             await asyncio.wait_for(app.db.reports.insert_one(report_data), timeout=10.0)
         except Exception as db_err:
             logger.error(f"Database Save Error: {db_err}")

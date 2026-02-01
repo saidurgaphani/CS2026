@@ -36,7 +36,6 @@ const InsightsVault = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [data, setData] = useState<any>(null);
-    const [visibleMetrics, setVisibleMetrics] = useState(['revenue', 'profit', 'expenses']);
 
     const fetchAggregateData = async () => {
         if (!user) return;
@@ -312,9 +311,9 @@ const InsightsVault = () => {
 
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                         <div className="lg:col-span-1 space-y-6">
-                            <MetricToggle label="Revenue Streams" active={visibleMetrics.includes('revenue')} onToggle={() => toggleMetric('revenue')} />
+                            {/* <MetricToggle label="Revenue Streams" active={visibleMetrics.includes('revenue')} onToggle={() => toggleMetric('revenue')} />
                             <MetricToggle label="Operating Cost" active={visibleMetrics.includes('expenses')} onToggle={() => toggleMetric('expenses')} color="rose" />
-                            <MetricToggle label="Net Profit" active={visibleMetrics.includes('profit')} onToggle={() => toggleMetric('profit')} color="emerald" />
+                            <MetricToggle label="Net Profit" active={visibleMetrics.includes('profit')} onToggle={() => toggleMetric('profit')} color="emerald" /> */}
 
                             <div className="p-6 bg-slate-900 rounded-3xl border border-white/5 shadow-2xl mt-8">
                                 <h4 className="text-[10px] font-black uppercase tracking-widest text-indigo-400 mb-4 italic">Comparison Engine</h4>
@@ -387,10 +386,6 @@ const InsightsVault = () => {
             </main>
         </div>
     );
-
-    function toggleMetric(metric: string) {
-        setVisibleMetrics(prev => prev.includes(metric) ? prev.filter(m => m !== metric) : [...prev, metric]);
-    }
 };
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -435,28 +430,5 @@ const KPICard = ({ title, value, icon, trend, isPositive, delay }: any) => (
         </div>
     </motion.div>
 );
-
-const MetricToggle = ({ label, active, onToggle, color = 'indigo' }: any) => {
-    const colorClasses: Record<string, string> = {
-        indigo: active ? 'bg-indigo-600 text-white border-indigo-600 shadow-indigo-100' : 'bg-white text-slate-400 border-slate-200',
-        rose: active ? 'bg-rose-600 text-white border-rose-600 shadow-rose-100' : 'bg-white text-slate-400 border-slate-200',
-        emerald: active ? 'bg-emerald-600 text-white border-emerald-600 shadow-emerald-100' : 'bg-white text-slate-400 border-slate-200'
-    };
-
-    return (
-        <button
-            onClick={onToggle}
-            className={`flex items-center justify-between w-full px-5 py-4 rounded-2xl border transition-all font-black uppercase tracking-widest text-[10px] shadow-sm ${colorClasses[color]}`}
-        >
-            {label}
-            <div className={`w-8 h-4 rounded-full relative transition-colors ${active ? 'bg-white/20' : 'bg-slate-100'}`}>
-                <motion.div
-                    animate={{ x: active ? 16 : 4 }}
-                    className={`absolute top-1 w-2 h-2 rounded-full ${active ? 'bg-white' : 'bg-slate-300'}`}
-                />
-            </div>
-        </button>
-    );
-};
 
 export default InsightsVault;
