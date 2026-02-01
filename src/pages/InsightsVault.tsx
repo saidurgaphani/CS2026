@@ -285,8 +285,8 @@ const InsightsVault = () => {
                 </div>
 
                 {/* Profit & Loss Section */}
-                <section className="mt-12">
-                    <div className="flex items-center justify-between mb-8">
+                <section className="mt-12 bg-slate-50/50 p-8 rounded-[3rem] border border-slate-200/50 shadow-inner">
+                    <div className="flex flex-col md:flex-row items-center justify-between mb-8 gap-4">
                         <div>
                             <h2 className="text-2xl font-poppins font-black text-slate-900 uppercase italic tracking-tight flex items-center gap-3">
                                 <TrendingUp className="w-8 h-8 text-indigo-600" />
@@ -294,10 +294,20 @@ const InsightsVault = () => {
                             </h2>
                             <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-1">Comparative Variance Analysis</p>
                         </div>
-                        <button className="flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 rounded-2xl font-black uppercase tracking-widest text-[10px] shadow-sm hover:shadow-md transition-all">
-                            <Download className="w-4 h-4" />
-                            Export Ledger
-                        </button>
+
+                        <div className="flex items-center gap-2 bg-white p-1.5 rounded-2xl border border-slate-200 shadow-sm">
+                            {['W', 'M', 'Y'].map((f) => (
+                                <button
+                                    key={f}
+                                    onClick={() => setFrequency(f)}
+                                    className={`px-4 py-2 rounded-xl text-[9px] font-black uppercase tracking-widest transition-all ${frequency === f
+                                        ? 'bg-indigo-600 text-white shadow-md'
+                                        : 'text-slate-400 hover:text-indigo-600 hover:bg-slate-50'}`}
+                                >
+                                    {f === 'W' ? 'Weekly' : f === 'M' ? 'Monthly' : 'Yearly'}
+                                </button>
+                            ))}
+                        </div>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -306,22 +316,38 @@ const InsightsVault = () => {
                             <MetricToggle label="Operating Cost" active={visibleMetrics.includes('expenses')} onToggle={() => toggleMetric('expenses')} color="rose" />
                             <MetricToggle label="Net Profit" active={visibleMetrics.includes('profit')} onToggle={() => toggleMetric('profit')} color="emerald" />
 
-                            <div className="p-6 bg-white rounded-3xl border border-slate-100 shadow-sm mt-8">
-                                <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4 italic">Comparison Engine</h4>
+                            <div className="p-6 bg-slate-900 rounded-3xl border border-white/5 shadow-2xl mt-8">
+                                <h4 className="text-[10px] font-black uppercase tracking-widest text-indigo-400 mb-4 italic">Comparison Engine</h4>
                                 <div className="space-y-4">
-                                    <div className="flex items-center justify-between p-3 bg-slate-50 rounded-xl">
-                                        <span className="text-[10px] font-bold uppercase tracking-widest text-slate-600">Growth vs Prev</span>
-                                        <span className="text-xs font-black text-emerald-600">+{metrics.growth}%</span>
+                                    <div className="flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/5">
+                                        <div className="flex flex-col">
+                                            <span className="text-[9px] font-bold uppercase tracking-widest text-slate-400">Growth vs Prev</span>
+                                            <span className="text-sm font-black text-white mt-1">{metrics.growth || 0}%</span>
+                                        </div>
+                                        <div className={`p-2 rounded-lg ${(metrics.growth || 0) >= 0 ? 'bg-emerald-500/20 text-emerald-400' : 'bg-rose-500/20 text-rose-400'}`}>
+                                            <Activity className="w-4 h-4" />
+                                        </div>
                                     </div>
-                                    <div className="flex items-center justify-between p-3 bg-slate-50 rounded-xl">
-                                        <span className="text-[10px] font-bold uppercase tracking-widest text-slate-600">Margin Efficiency</span>
-                                        <span className="text-xs font-black text-indigo-600">42%</span>
+                                    <div className="flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/5">
+                                        <div className="flex flex-col">
+                                            <span className="text-[9px] font-bold uppercase tracking-widest text-slate-400">Margin Efficiency</span>
+                                            <span className="text-sm font-black text-white mt-1">{metrics.efficiency || 0}%</span>
+                                        </div>
+                                        <div className="p-2 rounded-lg bg-indigo-500/20 text-indigo-400">
+                                            <Zap className="w-4 h-4" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="lg:col-span-3 bg-white rounded-[2.5rem] border border-slate-100 shadow-sm overflow-hidden">
+                        <div className="lg:col-span-3 bg-white rounded-[2.5rem] border border-slate-100 shadow-sm overflow-hidden flex flex-col">
+                            <div className="px-8 py-4 bg-slate-50/50 border-b border-slate-100 flex items-center justify-between">
+                                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 italic">Timeline Performance Ledger</span>
+                                <button className="p-1.5 hover:bg-slate-100 rounded-lg transition-colors">
+                                    <Download className="w-4 h-4 text-slate-400" />
+                                </button>
+                            </div>
                             <div className="overflow-x-auto">
                                 <table className="w-full text-left border-collapse">
                                     <thead>
