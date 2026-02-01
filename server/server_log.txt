@@ -581,3 +581,53 @@ INFO:     Started server process [23181]
 INFO:     Waiting for application startup.
 INFO:InsightAI:✅ Database client initialized
 INFO:     Application startup complete.
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:55649 - "GET /reports HTTP/1.1" 200 OK
+INFO:InsightAI:🔍 Fetching reports for user: BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:InsightAI:📂 Querying collection: reports
+INFO:InsightAI:✅ Found 2 reports for user BwOf3IwKiUg9fQMsyby7JLXbmxv1
+INFO:     127.0.0.1:55658 - "GET /reports HTTP/1.1" 200 OK
+ERROR:InsightAI:🔥 Aggregation Error: Invalid frequency: M. Failed to parse with error message: ValueError("'M' is no longer supported for offsets. Please use 'ME' instead.")
+INFO:     127.0.0.1:55665 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 500 Internal Server Error
+ERROR:InsightAI:🔥 Aggregation Error: Invalid frequency: M. Failed to parse with error message: ValueError("'M' is no longer supported for offsets. Please use 'ME' instead.")
+INFO:     127.0.0.1:55665 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 500 Internal Server Error
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:55665 - "GET /analytics/aggregate?frequency=W HTTP/1.1" 200 OK
+ERROR:InsightAI:🔥 Aggregation Error: Invalid frequency: M. Failed to parse with error message: ValueError("'M' is no longer supported for offsets. Please use 'ME' instead.")
+INFO:     127.0.0.1:55686 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 500 Internal Server Error
+ERROR:InsightAI:🔥 Aggregation Error: Invalid frequency: Y. Failed to parse with error message: ValueError("'Y' is no longer supported for offsets. Please use 'YE' instead.")
+INFO:     127.0.0.1:55686 - "GET /analytics/aggregate?frequency=Y HTTP/1.1" 500 Internal Server Error
+ERROR:InsightAI:🔥 Aggregation Error: Invalid frequency: M. Failed to parse with error message: ValueError("'M' is no longer supported for offsets. Please use 'ME' instead.")
+INFO:     127.0.0.1:55686 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 500 Internal Server Error
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:55686 - "GET /analytics/aggregate?frequency=W HTTP/1.1" 200 OK
+ERROR:InsightAI:🔥 Aggregation Error: Invalid frequency: M. Failed to parse with error message: ValueError("'M' is no longer supported for offsets. Please use 'ME' instead.")
+INFO:     127.0.0.1:55686 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 500 Internal Server Error
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:55686 - "GET /analytics/aggregate?frequency=W HTTP/1.1" 200 OK
+ERROR:InsightAI:🔥 Aggregation Error: Invalid frequency: M. Failed to parse with error message: ValueError("'M' is no longer supported for offsets. Please use 'ME' instead.")
+INFO:     127.0.0.1:55686 - "GET /analytics/aggregate?frequency=M HTTP/1.1" 500 Internal Server Error
+ERROR:InsightAI:🔥 Aggregation Error: Invalid frequency: Y. Failed to parse with error message: ValueError("'Y' is no longer supported for offsets. Please use 'YE' instead.")
+INFO:     127.0.0.1:55686 - "GET /analytics/aggregate?frequency=Y HTTP/1.1" 500 Internal Server Error
+ERROR:InsightAI:AI Generation Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+INFO:     127.0.0.1:55686 - "GET /analytics/aggregate?frequency=W HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [23181]
+/Users/saidurgaphani/CS2026/server/main.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [23460]
+INFO:     Waiting for application startup.
+INFO:InsightAI:✅ Database client initialized
+INFO:     Application startup complete.
