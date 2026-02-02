@@ -17,7 +17,8 @@ import {
     UploadCloud,
     FileText,
     Zap,
-    Trash2
+    Trash2,
+    Download
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../lib/AuthContext';
@@ -615,6 +616,18 @@ const Dashboard = () => {
                                                 LOAD SIGNAL
                                                 <input type="file" className="hidden" onChange={handleFileUpload} accept=".csv,.json,.xlsx,.xls" />
                                             </label>
+
+                                            <div className="mt-12">
+                                                <a
+                                                    href="https://drive.google.com/drive/folders/1NILJ7yNkeq1tB_upkYX1aMyGUUxtcxMm?usp=sharing"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="inline-flex items-center gap-2 text-[10px] font-black text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 uppercase tracking-[0.3em] transition-all group"
+                                                >
+                                                    <Download className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
+                                                    DOWNLOAD SAMPLE DATASETS
+                                                </a>
+                                            </div>
                                         </>
                                     ) : (
                                         <div className="py-10">
