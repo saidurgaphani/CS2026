@@ -47,7 +47,7 @@ def get_ai_model():
         trunc_key = key[:10] + "..." if key else "None"
         logger.info(f"🔄 AI Provider: Loading model with key {trunc_key}")
         genai.configure(api_key=key)
-        # Use v1beta for better compatibility if needed, but 1.5-flash is standard
+        # Using 'gemini-1.5-flash' with the latest library version
         return genai.GenerativeModel('gemini-1.5-flash')
     except Exception as e:
         logger.error(f"AI Model Init Error: {e}")
