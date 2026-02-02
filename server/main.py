@@ -25,20 +25,29 @@ load_dotenv()
 # Config
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
 DATABASE_NAME = os.getenv("DATABASE_NAME", "InsightAI")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
 # --- AI Configuration & Provider ---
 
 def get_ai_model():
     """Dynamically configures and returns the AI model to pick up .env changes."""
-    # Force reload environment to catch manual .env updates
-    load_dotenv(override=True)
+    # Priority 1: System Environment (Render/Vercel Dashboard)
     key = os.getenv("GEMINI_API_KEY")
+    
+    # Priority 2: .env file (Local Development) - only if key is missing from system
     if not key or "AIza" not in key:
+        load_dotenv(override=True)
+        key = os.getenv("GEMINI_API_KEY")
+        
+    if not key or "AIza" not in key:
+        logger.warning("⚠️ GEMINI_API_KEY is not set or invalid in environment.")
         return None
     
     try:
         trunc_key = key[:10] + "..." if key else "None"
         logger.info(f"🔄 AI Provider: Loading model with key {trunc_key}")
         genai.configure(api_key=key)
+        # Use v1beta for better compatibility if needed, but 1.5-flash is standard
         return genai.GenerativeModel('gemini-1.5-flash')
     except Exception as e:
         logger.error(f"AI Model Init Error: {e}")
@@ -179,7 +188,9 @@ async def generate_ai_report_async(df_summary: str, content_preview: str, metada
 
 async def structure_unstructured_data(text: str, domain: str = "General") -> list:
     """Uses AI to extract structured business records from raw text."""
-    if not GEMINI_API_KEY or "<" in GEMINI_API_KEY:
+    # Use global key or refresh from env
+    current_key = os.getenv("GEMINI_API_KEY")
+    if not current_key or "AIza" not in current_key:
         return []
         
     prompt = f"""
