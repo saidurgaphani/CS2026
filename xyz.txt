@@ -1,2 +1,6 @@
 Backend: cd server && pip3 install -r requirements.txt && python3 main.py
+<<<<<<< HEAD
 Frontend: npm run dev
+=======
+Frontend: npm run dev
+>>>>>>> 8df7dc786ca50347f6ef03f45499af8b46d6a25e
