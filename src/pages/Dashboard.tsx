@@ -136,6 +136,7 @@ const Dashboard = () => {
                 const remaining = reports.filter(r => r.id !== reportId);
                 setSelectedReport(remaining.length > 0 ? remaining[0] : null);
             }
+            alert("Signal Archive Permanently Deleted from Database.");
         } catch (err: any) {
             console.error("Delete Error:", err);
             setErrorMsg("Failed to terminate signal archive.");
@@ -407,21 +408,6 @@ const Dashboard = () => {
 
                         {!isLoading && activeTab === 'dashboard' && (
                             <motion.div key="dash" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="space-y-12">
-                                {/* AI Narrative Banner */}
-                                <div className="bg-indigo-600 dark:bg-indigo-500 rounded-3xl sm:rounded-[3rem] p-6 sm:p-12 text-white relative overflow-hidden shadow-2xl shadow-indigo-200 dark:shadow-indigo-500/20">
-                                    <div className="absolute top-0 right-0 w-[20rem] sm:w-[40rem] h-[20rem] sm:h-[40rem] bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 backdrop-blur-3xl animate-pulse"></div>
-                                    <div className="relative z-10">
-                                        <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-                                            <div className="p-2 sm:p-3 bg-white/20 rounded-xl sm:rounded-2xl backdrop-blur-md">
-                                                <Zap className="w-5 h-5 sm:w-6 sm:h-6" />
-                                            </div>
-                                            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.4em] opacity-80">AI Synthesis Core v4.2</span>
-                                        </div>
-                                        <h2 className="text-2xl sm:text-3xl lg:text-5xl font-outfit font-black leading-[1.2] lg:leading-[1.1] max-w-4xl tracking-tighter uppercase">
-                                            "{selectedReport?.executive_summary || 'Synchronizing with distributed business shards. Synthesizing operational patterns...'}"
-                                        </h2>
-                                    </div>
-                                </div>
 
                                 {/* Filters and Stats Interface */}
                                 <div className="flex flex-wrap items-center gap-6">
@@ -494,6 +480,30 @@ const Dashboard = () => {
                                         </ResponsiveContainer>
                                     </ChartCard>
                                 </div>
+
+
+                                {/* AI Narrative Banner */}
+                                <div className="bg-indigo-600 dark:bg-indigo-500 rounded-3xl sm:rounded-[3rem] p-6 sm:p-10 text-white relative overflow-hidden shadow-2xl shadow-indigo-200 dark:shadow-indigo-500/20">
+                                    <div className="absolute top-0 right-0 w-[20rem] sm:w-[40rem] h-[20rem] sm:h-[40rem] bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 backdrop-blur-3xl animate-pulse"></div>
+
+                                    <div className="relative z-10">
+                                        <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                                            <div className="p-2 sm:p-3 bg-white/20 rounded-xl sm:rounded-2xl backdrop-blur-md">
+                                                <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
+                                            </div>
+                                            <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.3em] opacity-70">
+                                                AI Synthesis Core v4.2
+                                            </span>
+                                        </div>
+
+                                        <p className="text-sm sm:text-base lg:text-lg font-medium leading-relaxed max-w-4xl text-white/90">
+                                            {selectedReport?.executive_summary ||
+                                                "Synchronizing business signals and synthesizing data patterns into clear, executive-ready insights."}
+                                        </p>
+                                    </div>
+                                </div>
+
+
 
                                 {/* Detailed Data Ledger */}
                                 <div className="bg-white dark:bg-slate-900 rounded-3xl sm:rounded-[3rem] border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden mb-20 text-[10px] sm:text-xs">
@@ -588,10 +598,10 @@ const Dashboard = () => {
 
                         {!isLoading && activeTab === 'upload' && (
                             <motion.div key="upload" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="max-w-3xl mx-auto py-12">
-                                <div className="text-center mb-16">
+                                {/* <div className="text-center mb-16">
                                     <h2 className="text-6xl font-outfit font-black text-slate-900 dark:text-white tracking-tighter uppercase">Injest Signal</h2>
                                     <p className="text-slate-400 dark:text-slate-500 font-bold mt-4 uppercase tracking-[0.3em] text-xs">Neural Architecture Discovery & Data Synthesis</p>
-                                </div>
+                                </div> */}
 
                                 <div className={`relative border-8 border-dashed rounded-[5rem] p-32 text-center transition-all duration-1000 ${isUploading ? 'bg-indigo-50 dark:bg-indigo-900/20 border-indigo-400 dark:border-indigo-500 shadow-inner' : 'bg-white dark:bg-slate-900/50 border-slate-100 dark:border-slate-800 hover:border-indigo-400 dark:hover:border-indigo-500 shadow-2xl dark:shadow-indigo-500/5'}`}>
                                     {!isUploading && !isGenerating ? (

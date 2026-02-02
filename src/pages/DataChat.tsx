@@ -10,7 +10,6 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { PureMultimodalInput } from '@/components/ui/multimodal-ai-chat-input';
 import type { UIMessage, Attachment } from '@/components/ui/multimodal-ai-chat-input';
-import { MultiStepLoader } from '@/components/ui/loader';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
@@ -25,7 +24,6 @@ const DataChat = () => {
     const { user } = useAuth();
     const { theme, setTheme } = useTheme();
     const [messages, setMessages] = useState<UIMessage[]>([]);
-    const [isLoadingChat, setIsLoadingChat] = useState(false);
     const [attachments, setAttachments] = useState<Attachment[]>([]);
     const [isGenerating, setIsGenerating] = useState(false);
     const [isFullscreen, setIsFullscreen] = useState(false);
@@ -36,18 +34,14 @@ const DataChat = () => {
 
     const scrollRef = useRef<HTMLDivElement>(null);
 
-
     // Fetch saved chats for sidebar
     const fetchSavedChats = useCallback(async () => {
         if (!user) return;
-        setIsLoadingChat(true);
         try {
             const res = await axios.get(`${API_URL}/analytics/chats?user_id=${user.uid}`);
             setSavedChats(res.data);
         } catch (err) {
             console.error('Failed to fetch chats:', err);
-        } finally {
-            setIsLoadingChat(false);
         }
     }, [user]);
 
@@ -62,7 +56,6 @@ const DataChat = () => {
     }, [messages]);
 
     const loadChat = async (chatId: string) => {
-        setIsLoadingChat(true);
         try {
             const res = await axios.get(`${API_URL}/analytics/chat/${chatId}`);
             setMessages(res.data.messages || []);
@@ -71,8 +64,6 @@ const DataChat = () => {
             setAttachments([]); // Clear pending attachments when switching sessions
         } catch (err) {
             console.error('Failed to load chat:', err);
-        } finally {
-            setIsLoadingChat(false);
         }
     };
 
@@ -94,7 +85,7 @@ const DataChat = () => {
         const assistantMsg: UIMessage = {
             id: assistantId,
             role: 'assistant',
-            content: ''
+            content: 'Thinking...' // Temporary placeholder
         };
 
         setMessages(prev => [...prev, assistantMsg]);
@@ -111,6 +102,21 @@ const DataChat = () => {
                 })
             });
 
+            if (!response.ok) {
+                let errorDetails = response.statusText;
+                try {
+                    const errorData = await response.json();
+                    errorDetails = errorData.detail || errorData.error || response.statusText;
+                } catch (jsonError) {
+                    try {
+                        errorDetails = await response.text();
+                    } catch (textError) {
+                        // ignore
+                    }
+                }
+                throw new Error(`Server Error (${response.status}): ${errorDetails}`);
+            }
+
             if (!response.body) throw new Error('No response body');
 
             const reader = response.body.getReader();
@@ -126,16 +132,16 @@ const DataChat = () => {
                 buffer += chunk;
                 const lines = buffer.split('\n');
 
-                // Keep the last line in the buffer as it might be incomplete
+                // IMPORTANT: The last element might be an incomplete line, so keep it in the buffer
                 buffer = lines.pop() || '';
 
                 for (const line of lines) {
-                    if (line.trim().startsWith('data: ')) {
-                        try {
-                            const params = line.trim().slice(6);
-                            if (!params) continue;
-                            const data = JSON.parse(params);
+                    const trimmedLine = line.trim();
+                    if (!trimmedLine || trimmedLine === 'data: [DONE]') continue;
 
+                    if (trimmedLine.startsWith('data: ')) {
+                        try {
+                            const data = JSON.parse(trimmedLine.slice(6));
                             if (data.error) throw new Error(data.error);
 
                             // Live update the current chat ID if it was newly created
@@ -145,13 +151,22 @@ const DataChat = () => {
                             }
 
                             if (data.content) {
+                                // If this is the first chunk, clear the "Thinking..." placeholder
+                                if (accumulatedContent === '') {
+                                    // We don't append to 'Thinking...', we replace it.
+                                }
                                 accumulatedContent += data.content;
+
                                 setMessages(prev => prev.map(m =>
                                     m.id === assistantId ? { ...m, content: accumulatedContent } : m
                                 ));
                             }
-                        } catch (e) {
-                            console.error('Error parsing stream chunk:', e, 'Line:', line);
+                        } catch (e: any) {
+                            // If it's a critical error from the server (data.error), rethrow it to stop stream and show UI error
+                            if (trimmedLine.includes('"error":')) {
+                                throw e;
+                            }
+                            console.error('Error parsing stream chunk:', e, 'Line:', trimmedLine);
                         }
                     }
                 }
@@ -357,123 +372,110 @@ const DataChat = () => {
                 </header>
 
                 <main className="flex-1 overflow-hidden relative flex flex-col max-w-5xl mx-auto w-full">
-                    {isLoadingChat ? (
-                        <div className="flex-1 flex items-center justify-center">
-                            <MultiStepLoader
-                                loadingStates={[
-                                    { text: "Syncing Neural Context..." },
-                                    { text: "Decrypting Conversation History..." }
-                                ]}
-                            />
-                        </div>
-                    ) : (
-                        <>
-                            <div
-                                ref={scrollRef}
-                                className="flex-1 overflow-y-auto px-4 sm:px-6 py-6 sm:py-10 space-y-6 sm:space-y-8 scroll-smooth"
-                            >
-                                <AnimatePresence initial={false}>
-                                    {messages.length === 0 ? (
-                                        <motion.div
-                                            initial={{ opacity: 0, y: 20 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            className="flex flex-col items-center justify-center h-full text-center space-y-6"
-                                        >
-                                            <div className="w-20 h-20 bg-indigo-600 rounded-[2.5rem] flex items-center justify-center shadow-2xl shadow-indigo-200/50 dark:shadow-none">
-                                                <Sparkles className="w-10 h-10 text-white" />
-                                            </div>
-                                            <div className="space-y-2">
-                                                <h2 className="text-2xl font-outfit font-black text-slate-900 dark:text-slate-100 uppercase">Interactive Intelligence</h2>
-                                                <p className="max-w-md text-sm text-slate-500 dark:text-slate-400 font-medium">
-                                                    Your personal AI Data Scientist is ready.
-                                                    Ask complex questions about your revenue, expenses, or projections across all uploaded reports.
-                                                </p>
-                                            </div>
-                                        </motion.div>
-                                    ) : (
-                                        messages.map((msg) => (
-                                            <motion.div
-                                                key={msg.id}
-                                                initial={{ opacity: 0, y: 10 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
-                                            >
-                                                <div className={`flex gap-3 sm:gap-4 max-w-[90%] sm:max-w-[85%] ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
-                                                    <div className={`flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl flex items-center justify-center border ${msg.role === 'user'
-                                                        ? 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-500'
-                                                        : 'bg-indigo-600 border-indigo-500 text-white shadow-lg shadow-indigo-100 dark:shadow-none'
-                                                        }`}>
-                                                        {msg.role === 'user' ? <User className="w-4 h-4 sm:w-5 sm:h-5" /> : <Bot className="w-4 h-4 sm:w-5 sm:h-5" />}
-                                                    </div>
-                                                    <div className={`px-4 sm:px-6 py-3 sm:py-4 rounded-[1.2rem] sm:rounded-[1.5rem] ${msg.role === 'user'
-                                                        ? 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm rounded-tr-none'
-                                                        : 'bg-white dark:bg-slate-800 border border-indigo-100 dark:border-indigo-900 shadow-xl shadow-indigo-50/50 dark:shadow-none rounded-tl-none'
-                                                        }`}>
-                                                        <div className="prose prose-slate dark:prose-invert prose-sm max-w-none prose-p:leading-relaxed dark:text-slate-300 prose-pre:bg-slate-900 prose-pre:text-white prose-table:border prose-table:border-slate-200 dark:prose-table:border-slate-700 prose-th:bg-slate-50 dark:prose-th:bg-slate-800/50 prose-th:px-4 prose-th:py-2 prose-td:px-4 prose-td:py-2">
-                                                            <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.content}</ReactMarkdown>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </motion.div>
-                                        ))
-                                    )}
-                                </AnimatePresence>
-                                {isGenerating && (
+                    <div
+                        ref={scrollRef}
+                        className="flex-1 overflow-y-auto px-4 sm:px-6 py-6 sm:py-10 space-y-6 sm:space-y-8 scroll-smooth"
+                    >
+                        <AnimatePresence initial={false}>
+                            {messages.length === 0 ? (
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="flex flex-col items-center justify-center h-full text-center space-y-6"
+                                >
+                                    <div className="w-20 h-20 bg-indigo-600 rounded-[2.5rem] flex items-center justify-center shadow-2xl shadow-indigo-200/50 dark:shadow-none">
+                                        <Sparkles className="w-10 h-10 text-white" />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <h2 className="text-2xl font-outfit font-black text-slate-900 dark:text-slate-100 uppercase">Interactive Intelligence</h2>
+                                        <p className="max-w-md text-sm text-slate-500 dark:text-slate-400 font-medium">
+                                            Your personal AI Data Scientist is ready.
+                                            Ask complex questions about your revenue, expenses, or projections across all uploaded reports.
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            ) : (
+                                messages.map((msg) => (
                                     <motion.div
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        className="flex justify-start"
+                                        key={msg.id}
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                                     >
-                                        <div className="flex gap-4 items-center pl-14">
-                                            <div className="flex gap-1.5">
-                                                <motion.div
-                                                    animate={{ scale: [1, 1.2, 1] }}
-                                                    transition={{ repeat: Infinity, duration: 1 }}
-                                                    className="w-1.5 h-1.5 bg-indigo-400 rounded-full"
-                                                />
-                                                <motion.div
-                                                    animate={{ scale: [1, 1.2, 1] }}
-                                                    transition={{ repeat: Infinity, duration: 1, delay: 0.2 }}
-                                                    className="w-1.5 h-1.5 bg-indigo-500 rounded-full"
-                                                />
-                                                <motion.div
-                                                    animate={{ scale: [1, 1.2, 1] }}
-                                                    transition={{ repeat: Infinity, duration: 1, delay: 0.4 }}
-                                                    className="w-1.5 h-1.5 bg-indigo-600 rounded-full"
-                                                />
+                                        <div className={`flex gap-3 sm:gap-4 max-w-[90%] sm:max-w-[85%] ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
+                                            <div className={`flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl flex items-center justify-center border ${msg.role === 'user'
+                                                ? 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-500'
+                                                : 'bg-indigo-600 border-indigo-500 text-white shadow-lg shadow-indigo-100 dark:shadow-none'
+                                                }`}>
+                                                {msg.role === 'user' ? <User className="w-4 h-4 sm:w-5 sm:h-5" /> : <Bot className="w-4 h-4 sm:w-5 sm:h-5" />}
                                             </div>
-                                            <span className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest animate-pulse">Analyzing Repositories...</span>
+                                            <div className={`px-4 sm:px-6 py-3 sm:py-4 rounded-[1.2rem] sm:rounded-[1.5rem] ${msg.role === 'user'
+                                                ? 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm rounded-tr-none'
+                                                : 'bg-white dark:bg-slate-800 border border-indigo-100 dark:border-indigo-900 shadow-xl shadow-indigo-50/50 dark:shadow-none rounded-tl-none'
+                                                }`}>
+                                                <div className="prose prose-slate dark:prose-invert prose-sm max-w-none prose-p:leading-relaxed dark:text-slate-300 prose-pre:bg-slate-900 prose-pre:text-white prose-table:border prose-table:border-slate-200 dark:prose-table:border-slate-700 prose-th:bg-slate-50 dark:prose-th:bg-slate-800/50 prose-th:px-4 prose-th:py-2 prose-td:px-4 prose-td:py-2">
+                                                    <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.content}</ReactMarkdown>
+                                                </div>
+                                            </div>
                                         </div>
                                     </motion.div>
-                                )}
-                            </div>
-
-                            {/* Input Area */}
-                            <div className="px-4 sm:px-6 py-4 sm:py-6 bg-transparent">
-                                <div className="relative group max-w-4xl mx-auto w-full">
-                                    <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-rose-500 rounded-[2.5rem] opacity-0 blur-lg group-hover:opacity-10 transition-opacity duration-500" />
-                                    <PureMultimodalInput
-                                        chatId="main-analyst"
-                                        messages={messages}
-                                        attachments={attachments}
-                                        setAttachments={setAttachments}
-                                        onSendMessage={handleSendMessage}
-                                        onStopGenerating={handleStopGenerating}
-                                        isGenerating={isGenerating}
-                                        canSend={!!user && !isGenerating}
-                                        selectedVisibilityType="private"
-                                        className="relative"
-                                    />
+                                ))
+                            )}
+                        </AnimatePresence>
+                        {isGenerating && (
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                className="flex justify-start"
+                            >
+                                <div className="flex gap-4 items-center pl-14">
+                                    <div className="flex gap-1.5">
+                                        <motion.div
+                                            animate={{ scale: [1, 1.2, 1] }}
+                                            transition={{ repeat: Infinity, duration: 1 }}
+                                            className="w-1.5 h-1.5 bg-indigo-400 rounded-full"
+                                        />
+                                        <motion.div
+                                            animate={{ scale: [1, 1.2, 1] }}
+                                            transition={{ repeat: Infinity, duration: 1, delay: 0.2 }}
+                                            className="w-1.5 h-1.5 bg-indigo-500 rounded-full"
+                                        />
+                                        <motion.div
+                                            animate={{ scale: [1, 1.2, 1] }}
+                                            transition={{ repeat: Infinity, duration: 1, delay: 0.4 }}
+                                            className="w-1.5 h-1.5 bg-indigo-600 rounded-full"
+                                        />
+                                    </div>
+                                    <span className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest animate-pulse">Analyzing Repositories...</span>
                                 </div>
-                                <p className="mt-3 text-center text-[9px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-[0.2em]">
-                                    Insightra AI Analyst can make mistakes. Verify critical financial data.
-                                </p>
-                            </div>
-                        </>
-                    )}
+                            </motion.div>
+                        )}
+                    </div>
+
+                    {/* Input Area */}
+                    <div className="px-4 sm:px-6 py-4 sm:py-6 bg-transparent">
+                        <div className="relative group max-w-4xl mx-auto w-full">
+                            <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-rose-500 rounded-[2.5rem] opacity-0 blur-lg group-hover:opacity-10 transition-opacity duration-500" />
+                            <PureMultimodalInput
+                                chatId="main-analyst"
+                                messages={messages}
+                                attachments={attachments}
+                                setAttachments={setAttachments}
+                                onSendMessage={handleSendMessage}
+                                onStopGenerating={handleStopGenerating}
+                                isGenerating={isGenerating}
+                                canSend={!!user && !isGenerating}
+                                selectedVisibilityType="private"
+                                className="relative"
+                            />
+                        </div>
+                        <p className="mt-3 text-center text-[9px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-[0.2em]">
+                            Insightra AI Analyst can make mistakes. Verify critical financial data.
+                        </p>
+                    </div>
                 </main>
             </div>
-        </div >
+        </div>
     );
 };
 

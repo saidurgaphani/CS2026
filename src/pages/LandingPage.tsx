@@ -125,9 +125,9 @@ const LandingPage = () => {
                 <div className="mt-40 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-black tracking-[0.5em] text-slate-600 uppercase italic">
                     <div>© 2026 INSIGHTRA</div>
                     <div className="flex gap-10">
-                        <span className="hover:text-white cursor-pointer transition-colors">Architecture</span>
-                        <span className="hover:text-white cursor-pointer transition-colors">Privacy</span>
-                        <span className="hover:text-white cursor-pointer transition-colors">Terminal</span>
+                        <span className="hover:text-white cursor-pointer transition-colors">Page1</span>
+                        <span className="hover:text-white cursor-pointer transition-colors">Page2</span>
+                        <span className="hover:text-white cursor-pointer transition-colors">Page3</span>
                     </div>
                 </div>
             </div>

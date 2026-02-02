@@ -39,7 +39,7 @@ def get_ai_model():
         trunc_key = key[:10] + "..." if key else "None"
         logger.info(f"🔄 AI Provider: Loading model with key {trunc_key}")
         genai.configure(api_key=key)
-        return genai.GenerativeModel('gemini-flash-latest')
+        return genai.GenerativeModel('gemini-1.5-flash')
     except Exception as e:
         logger.error(f"AI Model Init Error: {e}")
         return None
@@ -92,6 +92,7 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["*"]
 )
 
 # --- Utilities ---
@@ -123,7 +124,7 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
         if 'date' in col or 'time' in col:
             df[col] = pd.to_datetime(df[col], errors='coerce')
             # Fill missing dates with today or forward fill
-            df[col] = df[col].fillna(method='ffill').fillna(datetime.datetime.now())
+            df[col] = df[col].ffill().fillna(datetime.datetime.now())
         else:
             df[col] = df[col].fillna('Unknown')
             df[col] = df[col].astype(str).str.strip()
@@ -500,14 +501,27 @@ async def get_user_reports(user_id: str = Header(...)):
 @app.delete("/reports/{report_id}")
 async def delete_report(report_id: str):
     """Permanently delete a report and its associated metadata."""
-    logger.info(f"🗑️ Deleting report: {report_id}")
+    logger.info(f"🗑️ Request to delete report ID: {report_id}")
     if not hasattr(app, 'db') or app.db is None:
         raise HTTPException(status_code=503, detail="Database offline")
     try:
+        # Try delete by string ID first
         res = await app.db.reports.delete_one({"id": report_id})
+        
         if res.deleted_count == 0:
-            raise HTTPException(status_code=404, detail="Report not found")
-        return {"status": "deleted", "report_id": report_id}
+            logger.warning(f"⚠️ Report {report_id} not found by ID. Trying ObjectId...")
+            from bson import ObjectId
+            try:
+                res = await app.db.reports.delete_one({"_id": ObjectId(report_id)})
+            except:
+                pass
+        
+        if res.deleted_count > 0:
+             logger.info(f"✅ Successfully deleted report {report_id} from DB.")
+             return {"status": "deleted", "report_id": report_id}
+        
+        logger.error(f"❌ Failed to find report {report_id} for deletion.")
+        raise HTTPException(status_code=404, detail="Report not found")
     except Exception as e:
         logger.error(f"🔥 Delete Error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
@@ -629,7 +643,7 @@ async def get_all_user_data_context(user_id: str) -> str:
             "date_range": date_range,
             "total_revenue": float(df[rev_col].sum()) if rev_col else 0,
             "total_profit": float(df[prof_col].sum()) if prof_col else 0,
-            "sample_records": df.head(5).to_dict(orient='records')
+            "sample_records": json.loads(df.head(5).to_json(orient='records', date_format='iso'))
         }
         context_parts.append(json.dumps(summary))
     
@@ -700,6 +714,7 @@ async def data_aware_chat(request: ChatRequest):
             except Exception as e:
                 logger.error(f"AI Stream Failed (Quota/Net): {e}")
                 # Fallback to Mock if AI fails mid-stream or at start
+                logger.warning("⚠️ Triggering Mock Fallback due to AI Error")
                 mock_payload = get_mock_chat_response(user_query, data_context, str(e))
                 mock_text = mock_payload['content']
                 
@@ -735,7 +750,9 @@ async def data_aware_chat(request: ChatRequest):
 def get_mock_chat_response(query: str, data_context: str, error_context: str = "") -> dict:
     """Provides a data-aware mock response when the AI engine is down."""
     prompt_hint = "Your API key is missing or invalid. I'm currently running in 'Safe Analysis' mode."
-    if "403" in error_context:
+    if "429" in error_context:
+        prompt_hint = "⚠️ **Quota Exceeded**: Your free Gemini API tier limit has been reached. I'm using fallback logic until the quota resets."
+    elif "403" in error_context:
         prompt_hint = "⚠️ **API Key Leaked**: Your Gemini key has been disabled by Google. I'm using temporary analytical logic."
     
     # Generic but context-aware response construction

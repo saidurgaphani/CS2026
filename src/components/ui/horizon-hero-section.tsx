@@ -591,7 +591,7 @@ export const HorizonHero = () => {
 
                 <div className="hero-content cosmos-content">
                     <h1 ref={titleRef} className="hero-title">
-                        {titles[currentSection] || 'HORIZON'}
+                        {titles[currentSection] || 'INSIGHTRA'}
                     </h1>
                     <div ref={subtitleRef} className="hero-subtitle cosmos-subtitle">
                         <p className="subtitle-line">{subtitles[currentSection]?.line1}</p>

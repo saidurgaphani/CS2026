@@ -1,6 +1,7 @@
 fastapi
 uvicorn
 pandas
+numpy
 python-multipart
 pydantic
 google-generativeai
@@ -10,3 +11,4 @@ motor
 scikit-learn
 openpyxl
 dnspython
+gunicorn
