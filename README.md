@@ -8,6 +8,9 @@
 
 Insightra is a powerful Generative AI system designed to bridge the gap between raw data and executive decision-making. It transforms structured (CSV, JSON, Excel) and unstructured (raw text) data into professional business reports, narratives, and actionable insights with factual consistency.
 
+# View this project here: https://cs2026.vercel.app
+
+
 ## 🚀 Problem Statement
 Organizations spend countless hours manually converting raw data into readable business reports. This process is slow, prone to inconsistencies, and often lacks a cohesive narrative. Insightra automates this entire pipeline, understanding data context to produce executive-ready summaries.
 
