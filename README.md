@@ -83,8 +83,6 @@ Organizations spend countless hours manually converting raw data into readable b
 ## 🛡️ Factual Consistency
 Insightra ensures factual consistency by grounding Gemini's narratives in strict data context. The system performs pre-analysis on datasets (summaries, metadata) before passing it to the LLM, ensuring that generated reports reflect the actual numbers in your files.
 
-## 📄 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 *Developed for Hackathon Project - 2026*
